@@ -1,0 +1,14 @@
+{
+  "name": "burgerweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass source/sass/tA4-sass.scss source/css/tA4-css.css -w"
+  },
+  "author": "hossein",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
