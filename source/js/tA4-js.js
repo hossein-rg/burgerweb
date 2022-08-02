@@ -1,4 +1,5 @@
 'use strict';
+// fine work
 const searchBox = document.querySelector('.header-bottom-search');
 const closeSearchBox = document.querySelector('.out-popup');
 const navSticky = document.querySelector('.header-bottom');
