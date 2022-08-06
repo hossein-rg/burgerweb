@@ -463,7 +463,6 @@ body {
     margin-top: 5rem;
 
     &-img {
-        flex-grow: 1;
         width: 50%;
     }
 
@@ -472,13 +471,14 @@ body {
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        flex-grow: 1;
+        width: 50%;
         direction: rtl;
         font-family: fonttext;
         align-items: center;
 
         &-header {
             font-size: 4rem;
+            width: max-content;
         }
 
         &-stars {
@@ -510,6 +510,10 @@ body {
             img {
                 width: 5rem;
             }
+
+            p {
+                width: max-content;
+            }
         }
 
         &-menu {
@@ -520,6 +524,19 @@ body {
             background-size: cover;
             border-radius: 2.5rem;
 
+            a:hover {
+                animation: animeChangeBack 2s forwards infinite;
+                border-radius: 2.5rem;
+                box-shadow: 3px 3px 10px rgb(80, 80, 80),
+                    -3px -3px 10px white;
+            }
+
+            a:active {
+                box-shadow: 3px 3px 5px rgb(80, 80, 80),
+                    -3px -3px 5px white;
+                border-radius: 2.5rem;
+            }
+
             a:link,
             a:visited {
                 text-decoration: none;
@@ -527,11 +544,25 @@ body {
                 color: black;
                 font-size: 3rem;
                 padding: 5rem 15rem;
+                width: max-content;
             }
         }
     }
 }
 
+@keyframes animeChangeBack {
+    0% {
+        background-color: rgba(0, 128, 128, 0.267);
+    }
+
+    50% {
+        background-color: rgba(255, 255, 0, 0.202);
+    }
+
+    100% {
+        background-color: rgba(0, 128, 128, 0.267);
+    }
+}
 
 
 
@@ -584,7 +615,39 @@ body {
     }
 
     //   section 1
+    // empty
 
+    // section2
+    .section2 {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        &-img {
+            display: none;
+        }
+
+        &-text {
+            &-header {
+                font-size: 5vw !important;
+            }
+
+            &-p {
+                font-size: 3vw !important;
+                width: 100%;
+            }
+
+            &-logo {
+                gap: 2rem;
+            }
+
+            &-menu {
+                a {
+                    padding: 5vw 10vw !important;
+                }
+            }
+        }
+    }
 }
 
 
