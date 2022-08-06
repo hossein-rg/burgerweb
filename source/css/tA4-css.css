@@ -294,19 +294,19 @@ body {
   display: flex;
   margin-top: 5rem; }
   .section2-img {
-    flex-grow: 1;
     width: 50%; }
   .section2-text {
     margin-top: 5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    flex-grow: 1;
+    width: 50%;
     direction: rtl;
     font-family: fonttext;
     align-items: center; }
     .section2-text-header {
-      font-size: 4rem; }
+      font-size: 4rem;
+      width: max-content; }
     .section2-text-stars {
       display: flex;
       gap: 2rem;
@@ -328,6 +328,8 @@ body {
         font-family: font2; }
       .section2-text-logo img {
         width: 5rem; }
+      .section2-text-logo p {
+        width: max-content; }
     .section2-text-menu {
       margin-top: 3rem;
       background: linear-gradient(to bottom right, rgba(255, 221, 0, 0.437), rgba(0, 123, 168, 0.442)), url("/image/img/pexels-valeria-boltneva-1639557.jpg");
@@ -335,13 +337,29 @@ body {
       background-repeat: no-repeat;
       background-size: cover;
       border-radius: 2.5rem; }
+      .section2-text-menu a:hover {
+        animation: animeChangeBack 2s forwards infinite;
+        border-radius: 2.5rem;
+        box-shadow: 3px 3px 10px #505050, -3px -3px 10px white; }
+      .section2-text-menu a:active {
+        box-shadow: 3px 3px 5px #505050, -3px -3px 5px white;
+        border-radius: 2.5rem; }
       .section2-text-menu a:link,
       .section2-text-menu a:visited {
         text-decoration: none;
         display: inline-block;
         color: black;
         font-size: 3rem;
-        padding: 5rem 15rem; }
+        padding: 5rem 15rem;
+        width: max-content; }
+
+@keyframes animeChangeBack {
+  0% {
+    background-color: rgba(0, 128, 128, 0.267); }
+  50% {
+    background-color: rgba(255, 255, 0, 0.202); }
+  100% {
+    background-color: rgba(0, 128, 128, 0.267); } }
 
 @media screen and (max-width: 1180px) {
   .header-top {
@@ -350,7 +368,22 @@ body {
     width: 3rem;
     transition: all 2s; }
   .header-bottom-nav {
-    padding-right: 0; } }
+    padding-right: 0; }
+  .section2 {
+    display: flex;
+    width: 100%;
+    justify-content: center; }
+    .section2-img {
+      display: none; }
+    .section2-text-header {
+      font-size: 5vw !important; }
+    .section2-text-p {
+      font-size: 3vw !important;
+      width: 100%; }
+    .section2-text-logo {
+      gap: 2rem; }
+    .section2-text-menu a {
+      padding: 5vw 10vw !important; } }
 
 @media screen and (max-width: 650px) {
   body {
