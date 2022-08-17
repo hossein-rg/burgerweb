@@ -618,36 +618,6 @@ body {
     // empty
 
     // section2
-    .section2 {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-
-        &-img {
-            display: none;
-        }
-
-        &-text {
-            &-header {
-                font-size: 5vw !important;
-            }
-
-            &-p {
-                font-size: 3vw !important;
-                width: 100%;
-            }
-
-            &-logo {
-                gap: 2rem;
-            }
-
-            &-menu {
-                a {
-                    padding: 5vw 10vw !important;
-                }
-            }
-        }
-    }
 }
 
 
