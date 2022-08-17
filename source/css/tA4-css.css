@@ -295,16 +295,22 @@ body {
   margin-top: 5rem; }
   .section2-img {
     flex-grow: 1;
-    width: 50%; }
+    width: 50%;
+    height: fit-content;
+    z-index: -5;
+    position: relative;
+    visibility: hidden; }
   .section2-text {
     margin-top: 5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    flex-grow: 1;
+    width: 50%;
     direction: rtl;
     font-family: fonttext;
     align-items: center; }
+    .section2-text * {
+      font-size: 2.1rem; }
     .section2-text-header {
       font-size: 4rem; }
     .section2-text-stars {
@@ -314,7 +320,7 @@ body {
     .section2-text-p {
       margin-top: 5rem;
       text-align: center;
-      width: 50rem; }
+      width: 30vw; }
     .section2-text-logo {
       margin-top: 5rem;
       display: flex;
@@ -328,20 +334,12 @@ body {
         font-family: font2; }
       .section2-text-logo img {
         width: 5rem; }
-    .section2-text-menu {
-      margin-top: 3rem;
-      background: linear-gradient(to bottom right, rgba(255, 221, 0, 0.437), rgba(0, 123, 168, 0.442)), url("/image/img/pexels-valeria-boltneva-1639557.jpg");
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: cover;
-      border-radius: 2.5rem; }
-      .section2-text-menu a:link,
-      .section2-text-menu a:visited {
-        text-decoration: none;
-        display: inline-block;
-        color: black;
-        font-size: 3rem;
-        padding: 5rem 15rem; }
+
+@keyframes animeRotPizza {
+  from {
+    transform: rotate(90deg) translateY(500px); }
+  to {
+    transform: rotate(0deg) translateY(0px); } }
 
 @media screen and (max-width: 1180px) {
   .header-top {
@@ -350,7 +348,16 @@ body {
     width: 3rem;
     transition: all 2s; }
   .header-bottom-nav {
-    padding-right: 0; } }
+    padding-right: 0; }
+  .section2 * {
+    font-size: 2vw; }
+  .section2-text {
+    margin: 0; }
+    .section2-text * {
+      margin: 0;
+      gap: 2rem; }
+    .section2-text-header {
+      font-size: 3vw; } }
 
 @media screen and (max-width: 650px) {
   body {

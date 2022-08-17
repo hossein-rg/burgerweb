@@ -4,7 +4,8 @@ const searchBox = document.querySelector('.header-bottom-search');
 const closeSearchBox = document.querySelector('.out-popup');
 const navSticky = document.querySelector('.header-bottom');
 const backSticy = document.querySelector('.header-top');
-
+const section2 = document.querySelector('.section2');
+const sec2img = document.querySelector('.section2-img');
 // popup search show and close
 
 function show_pop_search() {
@@ -23,7 +24,6 @@ function out_buttom() {
 
 function cb(inter) {
     inter.forEach(el => {
-        console.log(el);
         if (!el.isIntersecting) {
             navSticky.style.position = 'fixed';
             navSticky.style.backgroundColor = "white";
@@ -50,37 +50,20 @@ window.onbeforeunload = function () {
 }
 
 
-// test slider
-
-const leftbtn = document.querySelector('.leftb');
-const rightbtn = document.querySelector('.rightb');
-const slides = document.querySelectorAll('.uim');
-const btns = document.querySelector('.btns');
-const bt = document.querySelectorAll('.c');
-let curNumber = 0;
-const maxNumber = slides.length;
-rightbtn.addEventListener('click', function () {
-    if (maxNumber - 1 === curNumber) {
-        curNumber = -1;
-    }
-    curNumber++;
-    slides.forEach(function (e, i) {
-        e.style.transform = `translateX(${100 * (i - curNumber)}%)`;
+const sec2Anime= function (entries){
+    entries.forEach(el =>{
+        if(el.isIntersecting){
+            sec2img.style.animation = "animeRotPizza 1s";
+            sec2img.style.visibility= "visible";
+        };
     })
-})
+}
 
-leftbtn.addEventListener('click', function () {
-    if (curNumber === 0) {
-        curNumber = 3;
-    }
-    curNumber--;
-    slides.forEach(function (e, i) {
-        e.style.transform = `translateX(${100 * (i - curNumber)}%)`;
-    })
-})
+const config = {
+    root : null,
+    threshold : 0.5,
+}
 
-btns.addEventListener('click', function () {
-    bt.forEach(function (e, i) {
+const observer_sec2 = new IntersectionObserver(sec2Anime,config);
 
-    })
-})
+observer_sec2.observe(section2);
