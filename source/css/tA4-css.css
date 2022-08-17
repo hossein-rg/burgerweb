@@ -358,6 +358,7 @@ body {
       gap: 2rem; }
     .section2-text-header {
       font-size: 3vw; } }
+    padding-right: 0; } }
 
 @media screen and (max-width: 650px) {
   body {
