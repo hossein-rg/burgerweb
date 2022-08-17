@@ -463,7 +463,12 @@ body {
     margin-top: 5rem;
 
     &-img {
+        flex-grow: 1;
         width: 50%;
+        height: fit-content;
+        z-index: -5;
+        position: relative;
+        visibility: hidden;
     }
 
     &-text {
@@ -471,16 +476,19 @@ body {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        // flex-grow: 1;
         width: 50%;
         direction: rtl;
         font-family: fonttext;
         align-items: center;
-
-        &-header {
-            font-size: 4rem;
-            width: max-content;
+    
+        & *{
+            font-size: 2.1rem;
         }
 
+        &-header{
+            font-size: 4rem;
+        }
         &-stars {
             display: flex;
             gap: 2rem;
@@ -490,7 +498,7 @@ body {
         &-p {
             margin-top: 5rem;
             text-align: center;
-            width: 50rem;
+            width: 30vw;
         }
 
         &-logo {
@@ -510,81 +518,19 @@ body {
             img {
                 width: 5rem;
             }
-
-            p {
-                width: max-content;
-            }
         }
 
-        &-menu {
-            margin-top: 3rem;
-            background: linear-gradient(to bottom right, rgba(255, 221, 0, 0.437), rgba(0, 123, 168, 0.442)), url('/image/img/pexels-valeria-boltneva-1639557.jpg');
-            background-position: top;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border-radius: 2.5rem;
-
-            a:hover {
-                animation: animeChangeBack 2s forwards infinite;
-                border-radius: 2.5rem;
-                box-shadow: 3px 3px 10px rgb(80, 80, 80),
-                    -3px -3px 10px white;
-            }
-
-            a:active {
-                box-shadow: 3px 3px 5px rgb(80, 80, 80),
-                    -3px -3px 5px white;
-                border-radius: 2.5rem;
-            }
-
-            a:link,
-            a:visited {
-                text-decoration: none;
-                display: inline-block;
-                color: black;
-                font-size: 3rem;
-                padding: 5rem 15rem;
-                width: max-content;
-            }
-        }
     }
 }
 
-@keyframes animeChangeBack {
-    0% {
-        background-color: rgba(0, 128, 128, 0.267);
+@keyframes animeRotPizza {
+    from{
+        transform: rotate(90deg) translateY(500px);
     }
-
-    50% {
-        background-color: rgba(255, 255, 0, 0.202);
-    }
-
-    100% {
-        background-color: rgba(0, 128, 128, 0.267);
+    to{
+        transform: rotate(0deg) translateY(0px);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -615,6 +561,26 @@ body {
     }
 
     //   section 1
+
+
+
+    // section 2
+    .section2{
+        & *{
+            font-size: 2vw;
+        }
+        &-text{
+            margin :0;
+            & *{
+                margin: 0;
+                gap: 2rem;
+            }
+        &-header{
+            font-size: 3vw;
+        }
+        }
+    }
+
     // empty
 
     // section2
