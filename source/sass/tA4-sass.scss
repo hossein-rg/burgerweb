@@ -760,4 +760,17 @@ body {
         }
     }
 
+    // section header and set hover menu منو
+    .nav-list a:first-child:hover 
+    .container-hover-img-top{
+        display: flex !important;
+        align-items: center;
+        flex-direction: column;
+        overflow: auto;
+        height: 500px !important;
+        margin-top: 3rem;
+        img{
+            width: 80vw !important;
+        }
+    }
 }

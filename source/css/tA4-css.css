@@ -443,4 +443,15 @@ body {
     .section1 .section1-box .section1-box-order {
       transform: translate(-15%, 10%); }
       .section1 .section1-box .section1-box-order a {
-        font-size: 1.5rem; } }
+        font-size: 1.5rem; }
+  .nav-list a:first-child:hover
+.container-hover-img-top {
+    display: flex !important;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+    height: 500px !important;
+    margin-top: 3rem; }
+    .nav-list a:first-child:hover
+.container-hover-img-top img {
+      width: 80vw !important; } }
