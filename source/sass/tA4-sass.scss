@@ -67,7 +67,7 @@ body {
     align-items: center;
     justify-content: space-between;
     font-size: 2rem;
-
+    position: relative;
     // phone number
     .header-top-left {
         // flex-basis: 25%;
@@ -127,7 +127,7 @@ body {
     padding-top: 1rem;
     width: 100%;
     height: fit-content;
-
+    position: relative;
     // nav list header
     .header-bottom-nav {
         order: 1;
@@ -147,11 +147,43 @@ body {
             a:visited {
                 color: rgb(0, 0, 0);
                 text-decoration: none;
-                position: relative;
+                // position: relative;
 
                 &:hover {
                     color: $second-color;
                     transition: 0.2s;
+                }
+            }
+            // set hover menu 
+            a:first-child{
+                padding-bottom: 15px;
+            }
+            .container-hover-img-top{
+
+                img{
+                    display:none;
+                }
+            }
+            a:first-child:hover .container-hover-img-top{
+                width: 100%;
+                height: max-content;
+                position: absolute;
+                top: 5.5rem;
+                right: 0;
+                background-color: rgb(251, 251, 251);
+                padding: 2rem 0;
+                display: inline-block;
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-template-rows: repeat(2,1fr) ;
+                grid-gap: 3rem;
+                img{
+                    width: 27vw;
+                    display: inline-block;
+                    &:hover{
+                        box-shadow: 1px 1px 10px rgb(175, 175, 175);
+                        transition: 0.3s;
+                    }
                 }
             }
 
@@ -532,11 +564,10 @@ body {
     }
 }
 
+// section 2 end 
 
 
-
-
-
+// section 3 start
 
 
 

@@ -46,7 +46,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 2rem; }
+  font-size: 2rem;
+  position: relative; }
   .header-top .header-top-left {
     margin-left: 0.5rem;
     display: flex;
@@ -81,7 +82,8 @@ body {
   font-family: font2;
   padding-top: 1rem;
   width: 100%;
-  height: fit-content; }
+  height: fit-content;
+  position: relative; }
   .header-bottom .header-bottom-nav {
     order: 1;
     flex-grow: 1;
@@ -97,12 +99,34 @@ body {
       .header-bottom .header-bottom-nav .nav-list a:link,
       .header-bottom .header-bottom-nav .nav-list a:visited {
         color: black;
-        text-decoration: none;
-        position: relative; }
+        text-decoration: none; }
         .header-bottom .header-bottom-nav .nav-list a:link:hover,
         .header-bottom .header-bottom-nav .nav-list a:visited:hover {
           color: #f7b50e;
           transition: 0.2s; }
+      .header-bottom .header-bottom-nav .nav-list a:first-child {
+        padding-bottom: 15px; }
+      .header-bottom .header-bottom-nav .nav-list .container-hover-img-top img {
+        display: none; }
+      .header-bottom .header-bottom-nav .nav-list a:first-child:hover .container-hover-img-top {
+        width: 100%;
+        height: max-content;
+        position: absolute;
+        top: 5.5rem;
+        right: 0;
+        background-color: #fbfbfb;
+        padding: 2rem 0;
+        display: inline-block;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 3rem; }
+        .header-bottom .header-bottom-nav .nav-list a:first-child:hover .container-hover-img-top img {
+          width: 27vw;
+          display: inline-block; }
+          .header-bottom .header-bottom-nav .nav-list a:first-child:hover .container-hover-img-top img:hover {
+            box-shadow: 1px 1px 10px #afafaf;
+            transition: 0.3s; }
   .header-bottom .header-bottom-socialmedia {
     order: 2;
     flex-grow: 1rem;
@@ -358,7 +382,6 @@ body {
       gap: 2rem; }
     .section2-text-header {
       font-size: 3vw; } }
-    padding-right: 0; } }
 
 @media screen and (max-width: 650px) {
   body {
