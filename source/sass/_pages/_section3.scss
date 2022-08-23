@@ -1,0 +1,43 @@
+.section3{
+    display: flex;
+    margin-top: 10rem;
+    &>*{
+        width: 33%;
+        // background-color: blanchedalmond;
+    }
+    &-img{
+        width: 25vw;
+        visibility: hidden;
+    }
+    &-head{
+        direction: rtl;
+        width: 80%;
+        font-family: font2;
+    }
+    &-detail{
+        width: 80%;
+        direction: rtl;
+    }
+    &-price{
+        direction: rtl;
+        width: 80%;
+        b{
+            font-size: 4rem;
+            color:$second-color;
+        }
+    }
+    &-plus{
+        background-color: $second-color;
+        width: fit-content;
+        font-size: 2rem;
+        padding: 1rem 2rem;
+        border-radius: 50%;
+        &:hover{
+            background-color: $main-color;
+            color: $second-color;
+            transition: 0.3s;
+        }
+    }
+}
+
+

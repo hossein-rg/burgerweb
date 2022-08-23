@@ -36,3 +36,32 @@
         transform: rotate(0deg) translateY(0px);
     }
 }
+
+@keyframes anime-img1-sec3 {
+    0%{
+        transform: translateX(-500px) rotateZ(180deg);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes anime-img2-sec3 {
+    0%{
+        transform: translateY(300px) rotateZ(180deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes anime-img3-sec3 {
+    0%{
+        transform: translateX(500px) rotateZ(180deg);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
