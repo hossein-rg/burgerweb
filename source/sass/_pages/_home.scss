@@ -1,0 +1,303 @@
+// header top box
+.header-top-box {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba($back-color,0.1);
+    height: fit-content;
+}
+
+// header top
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+    position: relative;
+// phone number
+    .header-top-left {
+        margin-left: 0.5rem;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+            color: $second-color;
+            transition: 0.5s;
+        }
+
+        img {
+            width: 4rem;
+        }
+    }
+
+// logo top
+    .header-top-center {
+        padding-bottom: 1rem;
+    }
+
+// address
+    .header-top-right {
+        flex-basis: 25%;
+        display: flex;
+        padding-right: 1rem;
+        align-items: center;
+        cursor: default;
+        height: 100%;
+        font-family: font2;
+
+        p {
+            direction: rtl;
+        }
+
+        img {
+            width: 4rem;
+            padding: 1rem 0.5rem;
+        }
+    }
+
+}
+
+// header-bottom
+
+.header-bottom {
+    z-index: 1;
+    display: flex;
+    direction: rtl;
+    align-items: center;
+    font-family: font2;
+    padding-top: 1rem;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    // nav list header
+    .header-bottom-nav {
+        order: 1;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        padding-right: 10vw;
+        font-size: 1.4vw;
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: 5vw;
+
+            a:link,
+            a:visited {
+                color: $main-color;
+                text-decoration: none;
+                // position: relative;
+
+                &:hover {
+                    color: $second-color;
+                    transition: 0.2s;
+                }
+            }
+// set hover menu 
+            a:first-child{
+                padding-bottom: 15px;
+            }
+            .container-hover-img-top{
+
+                img{
+                    display:none;
+                }
+            }
+            a:first-child:hover .container-hover-img-top{
+                width: 100%;
+                height: max-content;
+                position: absolute;
+                top: 5.5rem;
+                right: 0;
+                background-color: $third-color;
+                padding: 2rem 0;
+                display: inline-block;
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-template-rows: repeat(2,1fr) ;
+                grid-gap: 3rem;
+                img{
+                    width: 27vw;
+                    display: inline-block;
+                    &:hover{
+                        box-shadow: 1px 1px 10px $back-color;
+                        transition: 0.3s;
+                    }
+                }
+            }
+
+        }
+    }
+
+// social media icons
+    .header-bottom-socialmedia {
+        order: 2;
+        flex-grow: 1rem;
+        direction: ltr;
+        display: flex;
+        gap: 1rem;
+        padding-left: 1.5rem;
+
+        img {
+            transition: all 2s;
+            width: 4rem;
+        }
+
+        a:first-child:hover {
+            filter: invert(11%) sepia(81%) saturate(5453%) hue-rotate(323deg) brightness(100%) contrast(106%);
+        }
+
+        a:nth-child(2):hover {
+            filter: invert(46%) sepia(100%) saturate(345%) hue-rotate(143deg) brightness(94%) contrast(97%);
+        }
+
+        a:last-child:hover {
+            filter: invert(73%) sepia(83%) saturate(4326%) hue-rotate(78deg) brightness(104%) contrast(101%);
+        }
+    }
+
+// box order
+    .header-bottom-orderbox {
+        order: 0;
+// flex-grow: 0.4;
+        position: relative;
+        z-index: -4;
+
+        .number-order {
+            color: $second-color;
+            position: absolute;
+            top: -0.5rem;
+            left: 55%;
+            background-color: $main-color;
+            padding: 0.3rem 1rem;
+            border-radius: 50%;
+        }
+
+        a:link,
+        a:visited {
+            color: $main-color;
+            text-decoration: none;
+            display: inline-block;
+
+            img {
+                width: 5rem;
+            }
+
+            &:hover {
+                p {
+                    color: $main-color;
+                    background-color: $second-color;
+                    transition: 0.5s;
+                }
+
+                img {
+                    filter: invert(63%) sepia(98%) saturate(591%) hue-rotate(10deg) brightness(113%) contrast(94%);
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+
+    .header-bottom-search {
+        z-index: -5;
+
+        .search-box {
+            width: 3rem;
+
+            &:hover {
+                filter: invert(60%) sepia(82%) saturate(441%) hue-rotate(13deg) brightness(106%) contrast(99%);
+            }
+        }
+
+        .search-popup,
+        .input-popup,
+        .out-popup {
+            display: none;
+        }
+    }
+}
+
+
+// event listener click search
+
+
+.set-popup-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+
+    .center-pop {
+        .search-box {
+            display: none;
+        }
+
+        .out-anywhere {
+            background-color: $main-color;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            cursor: default;
+            opacity: 0.7;
+            transition: 1s;
+        }
+
+        .out-popup {
+            position: fixed;
+            top: 3rem;
+            right: 3rem;
+            width: 40px;
+            filter: invert(0%) sepia(89%) saturate(7456%) hue-rotate(200deg) brightness(110%) contrast(110%) drop-shadow(1px 0 0 $second-color) drop-shadow(-1px 0 0 $second-color) drop-shadow(0 1px 0 $second-color) drop-shadow(0 -1px 0 $second-color);
+
+            &:hover {
+                filter: invert(60%) sepia(82%) saturate(441%) hue-rotate(13deg) brightness(106%) contrast(99%) drop-shadow(1px 0 0 $main-color) drop-shadow(-1px 0 0 $main-color) drop-shadow(0 1px 0 $main-color) drop-shadow(0 -1px 0 $main-color);
+            }
+        }
+
+        .container-anime {
+            display: flex;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: animeSearch 0.5s;
+
+            .input-popup {
+                color: $third-color;
+                font-size: 2.5rem;
+                direction: rtl;
+                background-color: transparent;
+                border: none;
+                border-bottom: 2px $third-color solid;
+                padding: 1rem;
+                width: 50vw;
+                font-family: font2;
+
+                &::placeholder {
+                    color: $third-color;
+                }
+
+                &:focus {
+                    outline: none;
+                    border-bottom: 2px $main-color solid;
+                    caret-color: $third-color;
+                }
+            }
+
+            .search-popup {
+                width: 4rem;
+                filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+
+                &:hover {
+                    filter: invert(60%) sepia(82%) saturate(441%) hue-rotate(13deg) brightness(106%) contrast(99%);
+                }
+            }
+
+        }
+    }
+}
