@@ -1,0 +1,128 @@
+// media screen phone
+@media screen and(max-width:650px) {
+
+    //    header main
+    body {
+        width: 100%;
+    }
+
+    .header-top-box {
+
+        font-size: 1.1rem;
+
+        .header-top {
+            display: flex;
+            flex-direction: column;
+
+            .header-top-left {
+                order: 1;
+                font-size: 1.5rem;
+            }
+
+            .header-top-right {
+                order: 2;
+                text-align: left;
+                font-size: 1.2rem;
+            }
+        }
+
+        .header-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem 0;
+            width: 100% !important;
+
+            .header-bottom-orderbox {
+                position: absolute;
+                left: 2%;
+                top: 6%;
+
+                a img {
+                    width: 5rem;
+                }
+            }
+
+            .header-bottom-socialmedia {
+                display: none;
+            }
+
+            .header-bottom-nav {
+                width: 100%;
+                justify-content: space-around;
+                font-size: 3vw;
+                padding-right: 0;
+
+                .nav-list {
+                    gap: 10vw;
+
+                }
+            }
+
+            .header-bottom-search {
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                padding-right: 3%;
+                position: relative;
+                top: -1rem;
+            }
+        }
+    }
+
+    //   section 1
+    .section1 {
+        // height: 80%;
+
+        .section1-box {
+            display: flex;
+            gap: 2rem;
+            padding-top: 100px;
+            width: 100%;
+
+            div {
+                font-size: 1.6rem;
+            }
+
+            .section1-box-logo {
+                transform: translate(-20%, 0);
+            }
+
+            ;
+
+            .section1-box-head {
+                transform: translate(-40%, -60%);
+            }
+
+            .section1-box-detail {
+                width: 80%;
+                transform: translate(-40%, 0%);
+
+            }
+
+            ;
+
+            .section1-box-order {
+                transform: translate(-15%, 10%);
+
+                a {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    // section header and set hover menu منو
+    .nav-list a:first-child:hover 
+    .container-hover-img-top{
+        display: flex !important;
+        align-items: center;
+        flex-direction: column;
+        overflow: auto;
+        height: 500px !important;
+        margin-top: 3rem;
+        img{
+            width: 80vw !important;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@keyframes animeSearch {
+    0% {
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+
+    70% {
+        position: fixed;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+@keyframes anime-section1-order {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5, 2);
+        opacity: 0;
+    }
+}
+
+@keyframes animeRotPizza {
+    from{
+        transform: rotate(90deg) translateY(500px);
+    }
+    to{
+        transform: rotate(0deg) translateY(0px);
+    }
+}
+
+@keyframes anime-img1-sec3 {
+    0%{
+        transform: translateX(-500px) rotateZ(180deg);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes anime-img2-sec3 {
+    0%{
+        transform: translateY(300px) rotateZ(180deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes anime-img3-sec3 {
+    0%{
+        transform: translateX(500px) rotateZ(180deg);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}

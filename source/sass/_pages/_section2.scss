@@ -1,0 +1,66 @@
+// section 2 start
+
+.section2 {
+    display: flex;
+    margin-top: 5rem;
+
+    &-img {
+        flex-grow: 1;
+        width: 50%;
+        height: fit-content;
+        z-index: -5;
+        position: relative;
+        visibility: hidden;
+    }
+
+    &-text {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        // flex-grow: 1;
+        width: 50%;
+        direction: rtl;
+        font-family: fonttext;
+        align-items: center;
+    
+        & *{
+            font-size: 2.1rem;
+        }
+
+        &-header{
+            font-size: 4rem;
+        }
+        &-stars {
+            display: flex;
+            gap: 2rem;
+            color: $second-color;
+        }
+
+        &-p {
+            margin-top: 5rem;
+            text-align: center;
+            width: 30vw;
+        }
+
+        &-logo {
+            margin-top: 5rem;
+            display: flex;
+            gap: 10rem;
+            align-items: center;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                font-family: font2;
+            }
+
+            img {
+                width: 5rem;
+            }
+        }
+
+    }
+}

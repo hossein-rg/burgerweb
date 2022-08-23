@@ -1,0 +1,92 @@
+// start section 1
+
+.section1 { 
+    width: 100%;
+    // height: 93%;
+    background: linear-gradient(to bottom right, rgba(255, 60, 0, 0.2), rgba(8, 37, 255, 0.2)), url('/image/img/pexels-valeria-boltneva-1639562.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 10vw;
+
+    .section1-box {
+        display: flex;
+        flex-direction: column;
+        color: $third-color;
+        width: 50%;
+        height: auto;
+        // align-items: center;
+        font-size: 1.6vw;
+
+        &-logo {
+            width: 50%;
+            transform: translateX(20%);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        ;
+
+        &-head {
+            font-family: fontE;
+            align-self: center;
+            transform: translate(-25%, -60%);
+        }
+
+        ;
+
+        &-detail {
+            width: 60%;
+            padding-top: 20px;
+            align-self: flex-end;
+            transform: translate(-20%, -20%);
+        }
+
+        ;
+
+        &-order {
+            // padding-top: 30px;
+            transform: translate(30%, -70%);
+            width: fit-content;
+
+            a {
+                padding: 1rem 2rem;
+                background-color: rgba($main-color, 0.689);
+                border-radius: 5rem;
+                font-size: 1.4vw;
+                // width: 100%;
+                // height: 100%;
+
+                &:link,
+                &:visited {
+                    color: $second-color;
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    color: $third-color;
+                    transition: 0.3s;
+                }
+
+                &:hover::after {
+                    content: '';
+                    position: absolute;
+                    top: -20%;
+                    left: 0;
+                    width: 100%;
+                    height: 150%;
+                    border-radius: 35px;
+                    background-color: $main-color;
+                    z-index: -1;
+                    animation: anime-section1-order .5s forwards;
+                }
+            }
+
+
+        }
+
+        ;
+    }
+}
