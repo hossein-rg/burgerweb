@@ -8,6 +8,34 @@
     background-repeat: no-repeat;
     background-position: center center;
     padding: 10vw;
+    position: relative;
+    // 3 logo 
+
+    &-text-logo{
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        width: fit-content;
+        padding: 2rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        &>*{
+            text-align: center;
+            font-family: font2;
+            color: white;
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            img{
+                width: 3rem;
+                text-align: center;
+                filter: invert(13%) sepia(44%) saturate(6535%) hue-rotate(328deg) brightness(84%) contrast(112%);
+            }
+        }
+    }
 
     .section1-box {
         display: flex;

@@ -72,24 +72,44 @@ const allimg = document.querySelectorAll(".section3-img");
 const img1section3 = document.querySelector(".section3-img1");
 const img3section3 = document.querySelector(".section3-img3");
 const img2section3 = document.querySelector(".section3-img2");
-const sec3Anime = function (ele) {
+// anime1
+const sec3Anime1 = function (ele) {
   ele.forEach((el) => {
     if (el.isIntersecting) {
       img1section3.style.animation = "anime-img1-sec3 1s ";
       img1section3.style.visibility = "visible";
+    }
+  });
+};
+// anime 2
+const sec3Anime2 = function (ele) {
+  ele.forEach((el) => {
+    if (el.isIntersecting) {
       img2section3.style.animation = "anime-img2-sec3 1s ";
       img2section3.style.visibility = "visible";
+    }
+  });
+};
+// anime 3
+const sec3Anime3 = function (ele) {
+  ele.forEach((el) => {
+    if (el.isIntersecting) {
       img3section3.style.animation = "anime-img3-sec3 1s ";
       img3section3.style.visibility = "visible";
     }
   });
 };
-
 const objSec3 = {
   root: null,
-  threshold: 0.95,
+  threshold: 0.8,
 };
 
-const observer_sec3 = new IntersectionObserver(sec3Anime, objSec3);
+const observer_sec3img1 = new IntersectionObserver(sec3Anime1, objSec3);
+const observer_sec3img2 = new IntersectionObserver(sec3Anime2, objSec3);
+const observer_sec3img3 = new IntersectionObserver(sec3Anime3, objSec3);
 
-observer_sec3.observe(section3);
+observer_sec3img1.observe(img1section3);
+observer_sec3img2.observe(img2section3);
+observer_sec3img3.observe(img3section3);
+
+//

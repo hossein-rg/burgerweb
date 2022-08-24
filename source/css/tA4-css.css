@@ -15,7 +15,8 @@ body {
   color: black;
   font-size: 1.6rem;
   font-feature-settings: "ss01", "tnum";
-  font-family: font1, Arial, sans-serif; }
+  font-family: font1, Arial, sans-serif;
+  user-select: none; }
 
 @font-face {
   font-family: 'font1';
@@ -292,7 +293,30 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding: 10vw; }
+  padding: 10vw;
+  position: relative; }
+  .section1-text-logo {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: fit-content;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0; }
+    .section1-text-logo > * {
+      text-align: center;
+      font-family: font2;
+      color: white;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; }
+      .section1-text-logo > * img {
+        width: 3rem;
+        text-align: center;
+        filter: invert(13%) sepia(44%) saturate(6535%) hue-rotate(328deg) brightness(84%) contrast(112%); }
   .section1 .section1-box {
     display: flex;
     flex-direction: column;
@@ -371,19 +395,6 @@ body {
       margin-top: 5rem;
       text-align: center;
       width: 30vw; }
-    .section2-text-logo {
-      margin-top: 5rem;
-      display: flex;
-      gap: 10rem;
-      align-items: center; }
-      .section2-text-logo div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        font-family: font2; }
-      .section2-text-logo img {
-        width: 5rem; }
 
 @media screen and (max-width: 1180px) {
   .header-top {
@@ -502,8 +513,35 @@ body {
     width: fit-content;
     font-size: 2rem;
     padding: 1rem 2rem;
-    border-radius: 50%; }
+    border-radius: 50%;
+    cursor: pointer; }
     .section3-plus:hover {
       background-color: black;
       color: #ffc228;
       transition: 0.3s; }
+
+@media screen and (max-width: 970px) {
+  .section3 {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    width: 100%;
+    margin: 0; }
+    .section3 > * {
+      display: flex;
+      flex-direction: column;
+      width: 95%; }
+      .section3 > * img {
+        order: 1; }
+      .section3 > * .section3-price {
+        order: 3; }
+      .section3 > * .section3-head {
+        order: 4; }
+      .section3 > * .section3-detail {
+        order: 5; }
+      .section3 > * .section3-plus {
+        order: 2; }
+      .section3 > * > * {
+        margin: auto; }
+    .section3 img {
+      width: 40vw; } }
