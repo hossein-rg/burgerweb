@@ -10,14 +10,17 @@ const sec2img = document.querySelector(".section2-img");
 
 function show_pop_search() {
   searchBox.setAttribute("class", "set-popup-js");
+  document.querySelector(".header-bottom-orderbox").style.display = "none";
 }
 
 function out_all() {
   searchBox.setAttribute("class", "header-bottom-search");
+  document.querySelector(".header-bottom-orderbox").style = "";
 }
 
 function out_buttom() {
   searchBox.setAttribute("class", "header-bottom-search");
+  document.querySelector(".header-bottom-orderbox").style = "";
 }
 
 // nav bar sticky

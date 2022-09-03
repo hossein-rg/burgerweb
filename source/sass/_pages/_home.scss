@@ -83,11 +83,11 @@
             display: flex;
             flex-direction: row;
             gap: 5vw;
-
             a:link,
             a:visited {
                 color: $main-color;
                 text-decoration: none;
+                // padding-bottom: 2rem;
                 // position: relative;
 
                 &:hover {
@@ -96,11 +96,8 @@
                 }
             }
 // set hover menu 
-            a:first-child{
-                padding-bottom: 15px;
-            }
             .container-hover-img-top{
-
+                
                 img{
                     display:none;
                 }
@@ -109,10 +106,11 @@
                 width: 100%;
                 height: max-content;
                 position: absolute;
-                top: 5.5rem;
+                top: 2.5rem;
                 right: 0;
+                z-index: -10;
                 background-color: $third-color;
-                padding: 2rem 0;
+                padding: 4rem 0 1rem 0;
                 display: inline-block;
                 display: grid;
                 grid-template-columns: repeat(3,1fr);
@@ -161,7 +159,6 @@
 // box order
     .header-bottom-orderbox {
         order: 0;
-// flex-grow: 0.4;
         position: relative;
         z-index: -4;
 
@@ -199,10 +196,9 @@
             }
         }
     }
-
+// search box
     .header-bottom-search {
         z-index: -5;
-
         .search-box {
             width: 3rem;
 
@@ -231,8 +227,9 @@
     bottom: 0;
 
     .center-pop {
+        width: 0.5rem;
         .search-box {
-            display: none;
+            visibility: hidden;
         }
 
         .out-anywhere {

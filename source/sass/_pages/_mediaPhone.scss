@@ -125,4 +125,36 @@
             width: 80vw !important;
         }
     }
+
+    // section2
+    .section2{
+        width: 100%;
+        justify-content: center;
+        &-img{
+            position: absolute;
+            width:50%;
+            height: auto;
+            opacity: 0.3;
+        }
+        &-text{
+            width: 100%;
+            display: flex;
+            &>h1{
+                font-size: 4vw;
+                width: 80%;
+                text-align: center;
+            }
+            &>p{
+                font-size: 3vw;
+                width: 70%;
+                text-align: center;
+            }
+            &-stars{
+                justify-content: center;
+                &>*{
+                    font-size: 6vw;
+                }
+            }
+        }
+    }
 }
