@@ -1,0 +1,11 @@
+.button-3d {
+    &:hover {
+        box-shadow: 2px 2px 15px rgba(128, 128, 128, 0.468);
+        transition: 0.1s;
+    }
+
+    &:active {
+        transform: translateY(2px);
+        box-shadow: 2px 2px 7px rgba(128, 128, 128, 0.463);
+    }
+}
