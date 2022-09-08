@@ -115,4 +115,35 @@ observer_sec3img1.observe(img1section3);
 observer_sec3img2.observe(img2section3);
 observer_sec3img3.observe(img3section3);
 
-//
+//section5
+let bankSec5 = {
+srcMain : ["image/img/sec5/Frame-1-sec5.svg",
+           "image/img/sec5/Frame-2-sec5.svg",
+           "image/img/sec5/Frame-3-sec5.svg",
+           "image/img/sec5/Frame-4-sec5.svg",
+           "image/img/sec5/Frame-5-sec5.svg",
+           "image/img/sec5/Frame-6-sec5.svg"],
+srcHover:["image/img/sec5/Frame-1-sec5-hover.svg",
+          "image/img/sec5/Frame-2-sec5-hover.svg",
+          "image/img/sec5/Frame-3-sec5-hover.svg",
+          "image/img/sec5/Frame-4-sec5-hover.svg",
+          "image/img/sec5/Frame-5-sec5-hover.svg",
+          "image/img/sec5/Frame-6-sec5-hover.svg"]
+}
+const boxlistSec5 = document.querySelector('.section5-listpicture');
+const imgSec5 = document.querySelectorAll('.section5-listpicture li img');
+
+boxlistSec5.addEventListener('click',function(e){
+  if(e.srcElement.nodeName == 'IMG'){
+    let dataWhat = e.target.dataset.picsec5;
+    imgSec5[dataWhat-1].src = bankSec5.srcHover[dataWhat-1];
+    e.target.dataset.picsec5 = '10';
+    imgSec5.forEach(function(e){
+      if(e.dataset.picsec5 < 7){
+      e.src = bankSec5.srcMain[e.dataset.picsec5-1];
+      }
+    })
+    e.target.dataset.picsec5 = dataWhat;
+  }
+  else return;
+})
