@@ -1,4 +1,6 @@
 "use strict";
+
+
 // fine work
 const searchBox = document.querySelector(".header-bottom-search");
 const closeSearchBox = document.querySelector(".out-popup");
