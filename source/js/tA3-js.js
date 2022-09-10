@@ -117,18 +117,18 @@ observer_sec3img3.observe(img3section3);
 
 //section5
 let bankSec5 = {
-srcMain : ["image/img/sec5/Frame-1-sec5.svg",
-           "image/img/sec5/Frame-2-sec5.svg",
-           "image/img/sec5/Frame-3-sec5.svg",
-           "image/img/sec5/Frame-4-sec5.svg",
-           "image/img/sec5/Frame-5-sec5.svg",
-           "image/img/sec5/Frame-6-sec5.svg"],
-srcHover:["image/img/sec5/Frame-1-sec5-hover.svg",
-          "image/img/sec5/Frame-2-sec5-hover.svg",
-          "image/img/sec5/Frame-3-sec5-hover.svg",
-          "image/img/sec5/Frame-4-sec5-hover.svg",
-          "image/img/sec5/Frame-5-sec5-hover.svg",
-          "image/img/sec5/Frame-6-sec5-hover.svg"]
+srcMain : ["image/img/sec5/sec5-f1.svg",
+           "image/img/sec5/sec5-f2.svg",
+           "image/img/sec5/sec5-f3.svg",
+           "image/img/sec5/sec5-f4.svg",
+           "image/img/sec5/sec5-f5.svg",
+           "image/img/sec5/sec5-f6.svg"],
+srcHover:["image/img/sec5/sec5-f1hover.svg",
+          "image/img/sec5/sec5-f2hover.svg",
+          "image/img/sec5/sec5-f3hover.svg",
+          "image/img/sec5/sec5-f4hover.svg",
+          "image/img/sec5/sec5-f5hover.svg",
+          "image/img/sec5/sec5-f6hover.svg"]
 }
 const boxlistSec5 = document.querySelector('.section5-listpicture');
 const imgSec5 = document.querySelectorAll('.section5-listpicture li img');
@@ -137,6 +137,7 @@ boxlistSec5.addEventListener('click',function(e){
   if(e.srcElement.nodeName == 'IMG'){
     let dataWhat = e.target.dataset.picsec5;
     imgSec5[dataWhat-1].src = bankSec5.srcHover[dataWhat-1];
+    getSelection_sec6(dataWhat);
     e.target.dataset.picsec5 = '10';
     imgSec5.forEach(function(e){
       if(e.dataset.picsec5 < 7){
@@ -147,3 +148,74 @@ boxlistSec5.addEventListener('click',function(e){
   }
   else return;
 })
+
+
+
+// section6
+
+
+const banksection6 = {
+  1:["image/img/sec6/burger/b1.jpg",
+  "image/img/sec6/burger/b2.jpg",
+  "image/img/sec6/burger/b3.jpg",
+  "image/img/sec6/burger/b4.jpg",
+  "image/img/sec6/burger/b5.jpg",
+  "image/img/sec6/burger/b6.jpg",
+  "image/img/sec6/burger/b7.jpg",
+  "image/img/sec6/burger/b8.jpg",
+  "image/img/sec6/burger/b9.jpg",
+  "image/img/sec6/burger/b10.jpg",
+  "image/img/sec6/burger/b11.jpg",
+  "image/img/sec6/burger/b12.jpg"],
+  2:["image/img/sec6/pizza/p1.jpg",
+  "image/img/sec6/pizza/p2.jpg",
+  "image/img/sec6/pizza/p3.jpg",
+  "image/img/sec6/pizza/p4.jpg",
+  "image/img/sec6/pizza/p5.jpg",
+  "image/img/sec6/pizza/p6.jpg",
+  "image/img/sec6/pizza/p7.jpg",
+  "image/img/sec6/pizza/p8.jpg",
+  "image/img/sec6/pizza/p9.jpg",
+  "image/img/sec6/pizza/p10.jpg",
+  "image/img/sec6/pizza/p11.jpg",
+  "image/img/sec6/pizza/p12.jpg",
+  "image/img/sec6/pizza/p13.jpg",
+  "image/img/sec6/pizza/p14.jpg"],
+  3:["image/img/sec6/drink/d1.jpg",
+  "image/img/sec6/drink/d2.jpg",
+  "image/img/sec6/drink/d3.jpg",
+  "image/img/sec6/drink/d4.jpg",
+  "image/img/sec6/drink/d5.jpg",
+  "image/img/sec6/drink/d6.jpg",
+  "image/img/sec6/drink/d7.jpg",
+  "image/img/sec6/drink/d8.jpg",
+  "image/img/sec6/drink/d9.jpg",
+  "image/img/sec6/drink/d10.jpg"],
+}
+const boxAllSec6 = document.querySelector('.section6-box');
+function getSelection_sec6(what){
+  let remove_back = document.querySelector('.section6-img');
+  if(remove_back != null)
+  remove_back.remove();
+
+  boxAllSec6.insertAdjacentHTML("beforeend","<div class='section6-img'></div><div class='point-sec6'></div>");
+  let new_back = document.querySelector('.section6-img');
+ for(let i = 0 ; i<banksection6[what].length ; i++){
+   new_back.insertAdjacentHTML('beforeend',`<div class="section6-box-${what}${i+1}" id="sec6-id-${i+1}"><img src = "${banksection6[what][i]}"></div>`);
+ }
+//  boxAllSec6.insertAdjacentHTML('beforeend',"<div class='point-sec6'></div>");
+ let remove_dot = document.querySelector('.point-sec6');
+ remove_dot.remove();
+ let new_dot = document.querySelector('.point-sec6');
+ for(let j = 0;j<banksection6[what].length;j++){
+  new_dot.insertAdjacentHTML('beforeend',`<div><a href="#sec6-id-${j+1}"></a></div>`)
+ }
+   // hover dots menu
+   let dotsHover = document.querySelector('.point-sec6');
+   dotsHover.addEventListener('click',function(e){
+     console.log(e);
+     console.log('fine');
+   })
+}
+
+

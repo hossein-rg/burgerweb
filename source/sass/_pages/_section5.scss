@@ -3,6 +3,8 @@
     margin-top: 6rem;
     font-family: font2;
     overflow-x: auto;
+    font-size: 2rem;
+    transform: rotate(180deg);
 
     &-listpicture {
         width: 100%;
@@ -14,14 +16,17 @@
         li {
             text-align: center;
             position: relative;
+            transform: rotate(180deg);
+            padding-top: 2rem;
 
             p {
                 margin-top: 0.5rem;
+                color: #808080;
             }
 
             img {
                 cursor: pointer;
-                width: 10rem;
+                width: 8rem;
             }
         }
     }

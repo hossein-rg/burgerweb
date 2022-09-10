@@ -554,7 +554,9 @@ body {
   width: 100%;
   margin-top: 6rem;
   font-family: font2;
-  overflow-x: auto; }
+  overflow-x: auto;
+  font-size: 2rem;
+  transform: rotate(180deg); }
   .section5-listpicture {
     width: 100%;
     display: flex;
@@ -563,18 +565,70 @@ body {
     gap: 3rem; }
     .section5-listpicture li {
       text-align: center;
-      position: relative; }
+      position: relative;
+      transform: rotate(180deg);
+      padding-top: 2rem; }
       .section5-listpicture li p {
-        margin-top: 0.5rem; }
+        margin-top: 0.5rem;
+        color: #808080; }
       .section5-listpicture li img {
         cursor: pointer;
-        width: 10rem; }
+        width: 8rem; }
 
 @media screen and (max-width: 650px) {
   .section5-listpicture {
     justify-content: flex-start; }
     .section5-listpicture li img {
       width: 15vw; } }
+
+.section6-box {
+  width: 100%;
+  height: 50rem;
+  position: relative; }
+  .section6-box .point-sec6 {
+    position: absolute;
+    display: flex;
+    gap: 0.5rem;
+    top: 103%;
+    left: 50%;
+    transform: translateX(-50%);
+    direction: rtl; }
+    .section6-box .point-sec6 div a:link,
+    .section6-box .point-sec6 div a:visited {
+      display: block;
+      width: 1.8rem;
+      height: 1.8rem;
+      background-color: #cacaca;
+      border: solid black 1px;
+      border-radius: 50%; }
+  .section6-box .section6-img {
+    display: flex;
+    gap: 5rem;
+    width: 100%;
+    height: 55rem;
+    overflow: auto;
+    align-items: center;
+    direction: rtl;
+    padding-bottom: 2rem; }
+    .section6-box .section6-img > * {
+      width: 100%;
+      height: 50rem;
+      border: solid gray 2px;
+      display: flex;
+      align-items: center; }
+      .section6-box .section6-img > * img {
+        width: 30rem; }
+
+@media screen and (max-width: 850px) {
+  .section6-box .point-sec6 {
+    top: 82%; }
+  .section6-box .section6-img {
+    height: 45rem;
+    gap: 3rem; }
+    .section6-box .section6-img > * {
+      height: 40rem; }
+      .section6-box .section6-img > * img {
+        width: 25rem; } }
 
 .button-3d:hover {
   box-shadow: 2px 2px 15px rgba(128, 128, 128, 0.468);
