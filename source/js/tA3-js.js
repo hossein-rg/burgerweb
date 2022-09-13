@@ -45,12 +45,12 @@ function out_buttom() {
 
 function cb(inter) {
   inter.forEach((el) => {
-    if (!el.isIntersecting) {
+    if (!el.isIntersecting && (window.scrollY > 80)) {
       navSticky.style.position = "fixed";
       navSticky.style.backgroundColor = "white";
       navSticky.style.width = "90%";
       navSticky.style.boxShadow = "0px 9px 10px 0px rgba(0, 0, 0, 0.237)";
-    } else {
+    } else if(el.isIntersecting && (window.scrollY < 80)) {
       navSticky.style = "none";
     }
   });
@@ -67,13 +67,6 @@ intersection.observe(backSticy);
 
 
 
-// scroll to top page before unload
-
-
-
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
 
 const sec2Anime = function (entries) {
   entries.forEach((el) => {
@@ -229,42 +222,46 @@ boxlistSec5.addEventListener('click',function(e){
 
 
 const banksection6 = {
-  1:["image/img/sec6/burger/b1.jpg",
-  "image/img/sec6/burger/b2.jpg",
-  "image/img/sec6/burger/b3.jpg",
-  "image/img/sec6/burger/b4.jpg",
-  "image/img/sec6/burger/b5.jpg",
-  "image/img/sec6/burger/b6.jpg",
-  "image/img/sec6/burger/b7.jpg",
-  "image/img/sec6/burger/b8.jpg",
-  "image/img/sec6/burger/b9.jpg",
-  "image/img/sec6/burger/b10.jpg",
-  "image/img/sec6/burger/b11.jpg",
-  "image/img/sec6/burger/b12.jpg"],
-  2:["image/img/sec6/pizza/p1.jpg",
-  "image/img/sec6/pizza/p2.jpg",
-  "image/img/sec6/pizza/p3.jpg",
-  "image/img/sec6/pizza/p4.jpg",
-  "image/img/sec6/pizza/p5.jpg",
-  "image/img/sec6/pizza/p6.jpg",
-  "image/img/sec6/pizza/p7.jpg",
-  "image/img/sec6/pizza/p8.jpg",
-  "image/img/sec6/pizza/p9.jpg",
-  "image/img/sec6/pizza/p10.jpg",
-  "image/img/sec6/pizza/p11.jpg",
-  "image/img/sec6/pizza/p12.jpg",
-  "image/img/sec6/pizza/p13.jpg",
-  "image/img/sec6/pizza/p14.jpg"],
-  3:["image/img/sec6/drink/d1.jpg",
-  "image/img/sec6/drink/d2.jpg",
-  "image/img/sec6/drink/d3.jpg",
-  "image/img/sec6/drink/d4.jpg",
-  "image/img/sec6/drink/d5.jpg",
-  "image/img/sec6/drink/d6.jpg",
-  "image/img/sec6/drink/d7.jpg",
-  "image/img/sec6/drink/d8.jpg",
-  "image/img/sec6/drink/d9.jpg",
-  "image/img/sec6/drink/d10.jpg"],
+  1:["image/img/sec6/burger/b1.png",
+  "image/img/sec6/burger/b2.png",
+  "image/img/sec6/burger/b3.png",
+  "image/img/sec6/burger/b4.png",
+  "image/img/sec6/burger/b5.png",
+  "image/img/sec6/burger/b6.png",
+  "image/img/sec6/burger/b7.png",
+  "image/img/sec6/burger/b8.png",
+  "image/img/sec6/burger/b9.png",
+  "image/img/sec6/burger/b10.png",
+  "image/img/sec6/burger/b11.png",
+  "image/img/sec6/burger/b12.png"],
+  2:["image/img/sec6/pizza/p1.png",
+  "image/img/sec6/pizza/p2.png",
+  "image/img/sec6/pizza/p3.png",
+  "image/img/sec6/pizza/p4.png",
+  "image/img/sec6/pizza/p5.png",
+  "image/img/sec6/pizza/p6.png",
+  "image/img/sec6/pizza/p7.png",
+  "image/img/sec6/pizza/p8.png",
+  "image/img/sec6/pizza/p9.png",
+  "image/img/sec6/pizza/p10.png",
+  "image/img/sec6/pizza/p11.png",
+  "image/img/sec6/pizza/p12.png",
+  "image/img/sec6/pizza/p13.png",
+  "image/img/sec6/pizza/p14.png"],
+  3:["image/img/sec6/drink/d1.png",
+  "image/img/sec6/drink/d2.png",
+  "image/img/sec6/drink/d3.png",
+  "image/img/sec6/drink/d4.png",
+  "image/img/sec6/drink/d5.png",
+  "image/img/sec6/drink/d6.png",
+  "image/img/sec6/drink/d7.png",
+  "image/img/sec6/drink/d8.png",
+  "image/img/sec6/drink/d9.png",
+  "image/img/sec6/drink/d10.png",
+  "image/img/sec6/drink/d11.png",
+  "image/img/sec6/drink/d12.png",
+  "image/img/sec6/drink/d13.png",
+  "image/img/sec6/drink/d14.png"],
 }
 
 

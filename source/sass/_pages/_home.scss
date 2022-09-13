@@ -2,8 +2,19 @@
 .header-top-box {
     display: flex;
     flex-direction: column;
-    background-color: rgba($third-color,0.1);
+    background-color: rgba($third-color, 0.1);
     height: fit-content;
+    position: relative;
+
+    // &::after {
+    //     content: 'ok';
+    //     width: 100%;
+    //     height: 50%;
+    //     position: absolute;
+    //     top: 50%;
+    //     z-index: 2;
+    //     background-color: red;
+    // }
 }
 
 // header top
@@ -13,7 +24,8 @@
     justify-content: space-between;
     font-size: 2rem;
     position: relative;
-// phone number
+
+    // phone number
     .header-top-left {
         margin-left: 0.5rem;
         display: flex;
@@ -30,12 +42,12 @@
         }
     }
 
-// logo top
+    // logo top
     .header-top-center {
         padding-bottom: 1rem;
     }
 
-// address
+    // address
     .header-top-right {
         flex-basis: 25%;
         display: flex;
@@ -69,6 +81,9 @@
     width: 100%;
     height: fit-content;
     position: relative;
+    // background-color: gray;
+
+
     // nav list header
     .header-bottom-nav {
         order: 1;
@@ -83,6 +98,7 @@
             display: flex;
             flex-direction: row;
             gap: 5vw;
+
             a:link,
             a:visited {
                 color: $main-color;
@@ -95,14 +111,16 @@
                     transition: 0.2s;
                 }
             }
-// set hover menu 
-            .container-hover-img-top{
-                
-                img{
-                    display:none;
+
+            // set hover menu 
+            .container-hover-img-top {
+
+                img {
+                    display: none;
                 }
             }
-            a:first-child:hover .container-hover-img-top{
+
+            a:first-child:hover .container-hover-img-top {
                 width: 100%;
                 height: max-content;
                 position: absolute;
@@ -113,13 +131,15 @@
                 padding: 4rem 0 1rem 0;
                 display: inline-block;
                 display: grid;
-                grid-template-columns: repeat(3,1fr);
-                grid-template-rows: repeat(2,1fr) ;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 1fr);
                 grid-gap: 3rem;
-                img{
+
+                img {
                     width: 27vw;
                     display: inline-block;
-                    &:hover{
+
+                    &:hover {
                         box-shadow: 1px 1px 10px $back-color;
                         transition: 0.3s;
                     }
@@ -129,7 +149,7 @@
         }
     }
 
-// social media icons
+    // social media icons
     .header-bottom-socialmedia {
         order: 2;
         flex-grow: 1rem;
@@ -156,7 +176,7 @@
         }
     }
 
-// box order
+    // box order
     .header-bottom-orderbox {
         order: 0;
         position: relative;
@@ -196,9 +216,11 @@
             }
         }
     }
-// search box
+
+    // search box
     .header-bottom-search {
         z-index: -5;
+
         .search-box {
             width: 3rem;
 
@@ -228,6 +250,7 @@
 
     .center-pop {
         width: 0.5rem;
+
         .search-box {
             visibility: hidden;
         }
