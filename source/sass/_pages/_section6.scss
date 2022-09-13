@@ -44,7 +44,7 @@
                 height: 40rem;
                 display: flex;
                 align-items: center;
-                background-color: rgba(93, 93, 93, 0.7);
+                background-color: rgba(195, 195, 195, 0.5);
                 border-radius: 4.5rem;
 
                 img {
@@ -84,10 +84,10 @@
 
 .dtboxshimg {
     transition: 0.5s;
-    background-color: rgba(152, 152, 152, 0.59);
+    background-color: rgba(213, 213, 213, 0.3);
     border-radius: 4.5rem;
-    opacity: 0.9;
-    animation: animegotoslide 2s forwards;
+    animation: animegotoslide 1s forwards;
+    padding: 17rem 1rem;
 }
 
 .imgwhite-nothover {
