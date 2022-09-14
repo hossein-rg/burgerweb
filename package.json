@@ -2,13 +2,16 @@
   "name": "burgerweb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "mainof": "tA3-js.js",
   "scripts": {
-    "compile:sass": "node-sass source/sass/tA4-sass.scss source/css/tA4-css.css -w"
+    "compile:sass": "node-sass source/sass/tA4-sass.scss source/css/tA4-css.css -w",
+    "start": "parcel source/index.html",
+    "build": "parcel build source/index.html"
   },
   "author": "hossein",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.1",
+    "parcel": "^2.7.0"
   }
 }
