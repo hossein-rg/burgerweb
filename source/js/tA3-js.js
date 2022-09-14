@@ -1,5 +1,6 @@
 "use strict";
-
+import { bankSec5 } from "./bankSection5.js";
+import { banksection6 } from "./bankSection6.js";
 
 
 // fine work
@@ -20,7 +21,8 @@ const sec2img = document.querySelector(".section2-img");
 
 
 
-function show_pop_search() {
+function showPopSearch() {
+  console.log('ss')
   searchBox.setAttribute("class", "set-popup-js");
   document.querySelector(".header-bottom-orderbox").style.display = "none";
 }
@@ -39,8 +41,6 @@ function out_buttom() {
 
 
 // nav bar sticky
-
-
 
 
 function cb(inter) {
@@ -175,23 +175,6 @@ observer_sec3img3.observe(img3section3);
 
 
 
-
-let bankSec5 = {
-srcMain : ["image/img/sec5/sec5-f1.svg",
-           "image/img/sec5/sec5-f2.svg",
-           "image/img/sec5/sec5-f3.svg",
-           "image/img/sec5/sec5-f4.svg",
-           "image/img/sec5/sec5-f5.svg",
-           "image/img/sec5/sec5-f6.svg"],
-srcHover:["image/img/sec5/sec5-f1hover.svg",
-          "image/img/sec5/sec5-f2hover.svg",
-          "image/img/sec5/sec5-f3hover.svg",
-          "image/img/sec5/sec5-f4hover.svg",
-          "image/img/sec5/sec5-f5hover.svg",
-          "image/img/sec5/sec5-f6hover.svg"]
-}
-
-
 const boxlistSec5 = document.querySelector('.section5-listpicture');
 const imgSec5 = document.querySelectorAll('.section5-listpicture li img');
 
@@ -220,51 +203,6 @@ boxlistSec5.addEventListener('click',function(e){
 
 
 
-
-const banksection6 = {
-  1:["image/img/sec6/burger/b1.png",
-  "image/img/sec6/burger/b2.png",
-  "image/img/sec6/burger/b3.png",
-  "image/img/sec6/burger/b4.png",
-  "image/img/sec6/burger/b5.png",
-  "image/img/sec6/burger/b6.png",
-  "image/img/sec6/burger/b7.png",
-  "image/img/sec6/burger/b8.png",
-  "image/img/sec6/burger/b9.png",
-  "image/img/sec6/burger/b10.png",
-  "image/img/sec6/burger/b11.png",
-  "image/img/sec6/burger/b12.png"],
-  2:["image/img/sec6/pizza/p1.png",
-  "image/img/sec6/pizza/p2.png",
-  "image/img/sec6/pizza/p3.png",
-  "image/img/sec6/pizza/p4.png",
-  "image/img/sec6/pizza/p5.png",
-  "image/img/sec6/pizza/p6.png",
-  "image/img/sec6/pizza/p7.png",
-  "image/img/sec6/pizza/p8.png",
-  "image/img/sec6/pizza/p9.png",
-  "image/img/sec6/pizza/p10.png",
-  "image/img/sec6/pizza/p11.png",
-  "image/img/sec6/pizza/p12.png",
-  "image/img/sec6/pizza/p13.png",
-  "image/img/sec6/pizza/p14.png"],
-  3:["image/img/sec6/drink/d1.png",
-  "image/img/sec6/drink/d2.png",
-  "image/img/sec6/drink/d3.png",
-  "image/img/sec6/drink/d4.png",
-  "image/img/sec6/drink/d5.png",
-  "image/img/sec6/drink/d6.png",
-  "image/img/sec6/drink/d7.png",
-  "image/img/sec6/drink/d8.png",
-  "image/img/sec6/drink/d9.png",
-  "image/img/sec6/drink/d10.png",
-  "image/img/sec6/drink/d11.png",
-  "image/img/sec6/drink/d12.png",
-  "image/img/sec6/drink/d13.png",
-  "image/img/sec6/drink/d14.png"],
-}
-
-
 const boxAllSec6 = document.querySelector('.section6-box');
 function getSelection_sec6(what){
   let remove_back = document.querySelector('.section6-img');
@@ -275,11 +213,10 @@ function getSelection_sec6(what){
   let new_back = document.querySelector('.section6-img');
  for(let i = 0 ; i<banksection6[what].length ; i++){
    new_back.insertAdjacentHTML('beforeend',`<div class=" sec6-id-${i+1}" id="sec6-id-${i+1}"><img src = "${banksection6[what][i]}"></div>`);
-  //  section6-box-${what}${i+1} => class for images
  }
 
 
-//  boxAllSec6.insertAdjacentHTML('beforeend',"<div class='point-sec6'></div>");
+
  let remove_dot = document.querySelector('.point-sec6');
  remove_dot.remove();
  let new_dot = document.querySelector('.point-sec6');
@@ -305,7 +242,6 @@ function getSelection_sec6(what){
     if(e.target.className != "point-sec6"){
     dotinlive.setAttribute('id',"dthoverscript");
     document.querySelector(`#${e.target.className}`).setAttribute('class',`dtboxshimg`);
-    // document.querySelector(`#${e.target.className}`).scrollIntoView({behavior:'smooth'});
     // smooth scroll
     let slice_number=e.target.className;
     let slice_final = Number(slice_number.slice(8)-1);
