@@ -18,24 +18,28 @@ const sec2img = document.querySelector(".section2-img");
 
 // popup search show and close
 
-
-
-
 function showPopSearch() {
   console.log('ss')
   searchBox.setAttribute("class", "set-popup-js");
   document.querySelector(".header-bottom-orderbox").style.display = "none";
 }
+document.querySelector('.search-box').addEventListener('click',showPopSearch);
+
+
 
 function out_all() {
   searchBox.setAttribute("class", "header-bottom-search");
   document.querySelector(".header-bottom-orderbox").style = "";
 }
+document.querySelector('.out-anywhere').addEventListener('click',out_all);
+
+
 
 function out_buttom() {
   searchBox.setAttribute("class", "header-bottom-search");
   document.querySelector(".header-bottom-orderbox").style = "";
 }
+document.querySelector('.out-popup').addEventListener('click',out_buttom);
 
 
 
