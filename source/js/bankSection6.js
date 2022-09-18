@@ -39,12 +39,22 @@ const banksection6 = {
     "image/img/sec6/drink/d12.png",
     "image/img/sec6/drink/d13.png",
     "image/img/sec6/drink/d14.png"],
-    4:["image/img/sec6/drink/d14.png",
-       "image/img/sec6/pizza/p13.png"],
-    5:["image/img/sec6/drink/d13.png",
-    "image/img/sec6/pizza/p13.png"],
-    6:["image/img/sec6/drink/d10.png",
-    "image/img/sec6/pizza/p13.png"]
+    4:["image/img/sec6/pasta/p1.png",
+       "image/img/sec6/pasta/p2.png",
+       "image/img/sec6/pasta/p3.png",
+       "image/img/sec6/pasta/p4.png",
+       "image/img/sec6/pasta/p2.png",],
+    5:["image/img/sec6/soup/so1.png",
+       "image/img/sec6/soup/so2.png",
+       "image/img/sec6/soup/so3.png",
+       "image/img/sec6/soup/so4.png",
+       "image/img/sec6/soup/so1.png"],
+    6:["image/img/sec6/sushi/s1.png",
+       "image/img/sec6/sushi/s2.png",
+       "image/img/sec6/sushi/s3.png",
+       "image/img/sec6/sushi/s4.png",
+       "image/img/sec6/sushi/s5.png",
+       "image/img/sec6/sushi/s6.png"]
   };
 
   export {banksection6};
