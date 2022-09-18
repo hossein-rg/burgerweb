@@ -239,11 +239,13 @@ function getSelection_sec6(what){
    dotsHover.addEventListener('click',function(e){
     event.preventDefault();
     let dotinlive = e.path[1];
-    for(let i = 0 ; i<dotsHover.children.length;i++){
-      dotsHover.children[i].setAttribute('id','backwhite');
-      imgHover.children[i].setAttribute('class','imgwhite-nothover');
-    }
     if(e.target.className != "point-sec6"){
+      // set class for every dot
+      for(let i = 0 ; i<dotsHover.children.length;i++){
+        dotsHover.children[i].setAttribute('id','backwhite');
+        imgHover.children[i].setAttribute('class','imgwhite-nothover');
+      }
+      // special dot
     dotinlive.setAttribute('id',"dthoverscript");
     document.querySelector(`#${e.target.className}`).setAttribute('class',`dtboxshimg`);
     // smooth scroll
@@ -257,4 +259,51 @@ function getSelection_sec6(what){
    })
 }
 
+
+// bank detail section6
+const bankSection6_detail = {
+  1:["چیزبرگر ویژه بوقلمون","دابل برگر","آنگوس برگر","برگر بوفالو","برگر کیوی","برگر ایتالیایی","برگر پورک","برگر 50/50","چیلی برگر ویژه","برگر مک دونالد","برگر ذغالی","وگان برگر"],
+  2:["پیتزا ویژه","پیتزا برلوسکونی","پیتزا هاوایی","پیتزا هاگیز","پیتزا مینی","پیتزا مارگاریتا","پیتزا گوشت","پیتزا مخصوص","پیتزا ناپل","پیتزا تارت مرغ","پیتزا تارت گوشت","پیتزا دیترویت"," پیتزا وگان","پیتزا دریایی وِیژه"],
+  3:["drink","drink","drink","drink","drink","drink","drink","drink","drink","drink","drink","drink","drink","drink"],
+  4:["soup","soup","soup","soup","soup","soup","soup","soup","soup","soup","soup","soup","soup","soup"],
+  5:["pasta","pasta","pasta","pasta","pasta","pasta","pasta","pasta","pasta","pasta","pasta","pasta","pasta","pasta"],
+  6:["pizza","pizza","pizza","pizza","pizza","pizza","pizza","pizza","pizza","pizza","pizza","pizza","pizza","pizza"],
+}
+const bankSection6_superdetail = {
+  1:["80درصد گوشت بوقلمون , پنیر گودا , کاهو , گوجه , پیاز",
+     "800 گرم گوشت گوساله , پنیر چدار ورقه ای , کاهو , گوجه , پیاز",
+     "400 گرم گوشت گاو آنگوس , پنیر گودا , 100 گرم جگر گاو آنگوس , کاهو , گوجه",
+     "500 گرم گوشت بوفالو آمریکایی , پنیر ورقه ای چدار , کاهو برزیلی , گوجه , پیاز",
+     " 400 گرم گوشت گاو , پنیر چدار , چغندر , پیاز , سس مخصوص ",
+     "400 گرم گوشت گاو بدون چربی, پنیر ورقه ای چدار , سبزی روکولا , سس مخصوص , جعفری تازه و آویشن , نان سیبا",
+     "سینه مرغ , قارچ , پنیر گودا , کاهو , خیارشور , گوجه و پیاز",
+     "50درصد بیکن, 50درصد گوشت گوساله , کاهو , خیارشور , گوجه , پیاز",
+     "300گرم گوشت گاو 80 درصد, رست بیف , پنیر ورقه ای چدار , سس ویژه",
+     "350گرم گوشت گاو 100درصد, پنیر گودا , کاهو , گوجه , سس مخصوص مک دونالد",
+     "گوشت چرخ کرده , قارچ , خیارشور , کاهو , گوجه",
+     "کاهو, پودر زنجبیل , گوجه , خیار , قارچ"],
+  2:["گوشت خوک , پاپریکا , ذرت , قارچ",
+  "گوشت دودی گوزن , پنیر فنلاندی , زیتون تلخ , سس مخصوص",
+  "پنیر , آناناس , کوکتل میوه ای , اژدها , سوسیس",
+  "جگر گوسفند, دانه های معطر اسکاتلندی , پنیرپیتزا مخصوص",
+  "پنیر, کالباس , قارچ , فلفل دلمه ای",
+  "پنیر, ریحان , گوجه فرنگی",
+  "بیکن , زیتون , گوشت چرخ کرده , پنیر ناپل",
+  "کالباس, پنیر ویژه , قارچ , سینه مرغ , بیکن , بیف",
+  "پنیر لانگوس, خامه ترش , سیر , کره , گوجه فرنگی , زیتون , گوشت خوک",
+  "سینه گریل, پنیر , زیتون , ریحان , ذرت",
+  "بیکن گوساله , پنیر ایتالیایی , فلفل , قارچ",
+  "سوسیس پپرونی, سس گوجه , پنیر رنده فوگا , ریحان",
+  "قارچ, زیتون , سینه مرغ , زیتون ,فلفل دلمه ای , ذرت , ریحان",
+  "اختاپوس, صدف , میگو , پنیر ایتالیایی",
+]
+}
+boxlistSec5.addEventListener('click',function(element){
+  const boxSection6_detail = document.querySelector('.section6-img');
+  for(let i = 1 ; i<=boxSection6_detail.children.length;i++){
+    const Section6_detail = document.querySelector(`.sec6-id-${i}`);
+    let howElement = element.target.dataset.picsec5;
+    Section6_detail.insertAdjacentHTML('beforeend',`<p>${bankSection6_detail[howElement][i-1]}</p>`);
+  }
+})
 
