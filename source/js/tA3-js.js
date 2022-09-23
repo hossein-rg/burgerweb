@@ -213,7 +213,7 @@ function getSelection_sec6(what){
   if(remove_back != null)
   remove_back.remove();
 
-  boxAllSec6.insertAdjacentHTML("beforeend","<div class='section6-img'></div><div class='point-sec6'></div>");
+  boxAllSec6.insertAdjacentHTML("beforeend","<div class='section6-img dragscroll'></div><div class='point-sec6'></div>");
   let new_back = document.querySelector('.section6-img');
  for(let i = 0 ; i<banksection6[what].length ; i++){
    new_back.insertAdjacentHTML('beforeend',`<div class=" sec6-id-${i+1}" id="sec6-id-${i+1}"><img src = "${banksection6[what][i]}"></div>`);
@@ -298,12 +298,88 @@ const bankSection6_superdetail = {
   "اختاپوس, صدف , میگو , پنیر ایتالیایی",
 ]
 }
+const bankordersec6 = {
+  1:[0,0,0,0,0,0,0,0,0,0,0,0],
+  2:[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  3:[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  4:[0,0,0,0,0],
+  5:[0,0,0,0,0],
+  6:[0,0,0,0,0,0],
+}
+// add order and detail
 boxlistSec5.addEventListener('click',function(element){
+  if(element.srcElement.nodeName != 'IMG') return;
   const boxSection6_detail = document.querySelector('.section6-img');
   for(let i = 1 ; i<=boxSection6_detail.children.length;i++){
     const Section6_detail = document.querySelector(`.sec6-id-${i}`);
     let howElement = element.target.dataset.picsec5;
-    Section6_detail.insertAdjacentHTML('beforeend',`<p>${bankSection6_detail[howElement][i-1]}</p>`);
+    Section6_detail.insertAdjacentHTML('beforeend',`<div class="section6-all-detail"><p>${bankSection6_detail[howElement][i-1]}</p>
+    <div class="order-section6 order-section6-${howElement}${i}"
+    data-sec6="${howElement}${i}">
+    <a href="javascript:void(0)" class="order-section6-add" >+</a>
+    <span class="order-section6-number">0</span>
+    <a href="javascript:void(0)"  class="order-section6-remove">-</a>
+    </div></div>`);
   }
 })
-
+// set order by user
+// let nowNumber = 0;
+boxlistSec5.addEventListener('click',function(e){
+  if(e.srcElement.nodeName != 'IMG') return;
+    // dont remove order list user 
+    for (const key in bankordersec6) {
+      for(let i = 0 ; i < bankordersec6[key].length; i++){
+        if(bankordersec6[key][i] != 0){
+          let OrderSet = document.querySelector(`.order-section6-${key}${i+1}`);
+          if(OrderSet != null) {
+          OrderSet.children[1].style.display = 'block';
+          OrderSet.children[1].textContent = bankordersec6[key][i];
+          OrderSet.children[2].style.display = 'block';
+          }
+        }
+      }
+    }
+  
+  
+    // 
+  let selectData = document.querySelector('.section6-img');
+selectData.addEventListener('click',function(e){
+  if(e.path[1].classList[0] != "order-section6") return;
+  let childrenOrder = e.path[1].children;
+  let addbtn = childrenOrder[0];
+  let numberbtn = childrenOrder[1];
+  let removebtn = childrenOrder[2];
+  let selectDataSet = 0;
+    // slice number data
+  selectDataSet = e.path[1].dataset.sec6;
+  let howsec6 = Number(selectDataSet.slice(1));
+  let howsec5 = Number(selectDataSet.slice(0,1));
+  // click btn + -
+  if(e.target.className == "order-section6-add"){
+    bankordersec6[howsec5][howsec6-1] += 1;
+    numberbtn.textContent = bankordersec6[howsec5][howsec6-1];
+  }
+  if(e.target.className == "order-section6-number"){
+    console.log(1);
+  }
+  if(e.target.className == "order-section6-remove"){
+    if(bankordersec6[howsec5][howsec6-1] == 1){
+      removebtn.style.display = "none";
+      numberbtn.style.display = "none";
+      bankordersec6[howsec5][howsec6-1] = 0;
+      return;
+    }
+    bankordersec6[howsec5][howsec6-1] -= 1;
+    numberbtn.textContent = bankordersec6[howsec5][howsec6-1];
+  }
+  removebtn.style.display = "block";
+  numberbtn.style.display = "block";
+  // show + only and show - and number
+  // for(const child in childrenOrder){
+  //   childrenOrder[child].style.display = "block";
+  //   if(child == 1){
+  //    childrenOrder[child].textContent ="1";
+  //   }
+  // }
+})
+})
