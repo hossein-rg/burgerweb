@@ -37,7 +37,7 @@
             overflow: auto;
             align-items: center;
             direction: rtl;
-            padding: 0 3rem 2rem 3rem;
+            padding: 0 6rem 2rem 6rem;
 
             &>* {
                 width: 100%;
@@ -49,7 +49,10 @@
                 background-color: rgba(195, 195, 195, 0.5);
                 border-radius: 4.5rem;
                 position: relative;
-                border: 2px solid white;
+                border-radius: 5rem;
+                background: linear-gradient(225deg, #dddddd, #ffffff);
+                box-shadow: -5px 5px 10px #d0d0d0,
+                    5px -5px 10px #ffffff;
 
                 img {
                     width: 25rem;
@@ -57,15 +60,54 @@
                     top: -6rem;
                 }
 
-                // details
-                p {
+                // details add by js 
+                .section6-all-detail {
                     position: absolute;
                     top: 75%;
-                    background-color: #8080808f;
                     width: 100%;
-                    height: 10rem;
-                    border-radius: 0 0 4.5rem 4.5rem;
+                    height: 25%;
+                    background-color: rgba(1, 82, 67, 0.201);
+                    border-radius: 0 0 5rem 5rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 25%;
 
+                    p {
+                        text-align: center;
+                        color: rgb(2, 90, 103);
+                        font-family: font2;
+                        width: 100%;
+
+                    }
+
+                    .order-section6 {
+                        display: flex;
+                        font-size: 3rem;
+                        gap: 2rem;
+                        position: relative;
+                        justify-content: center;
+
+                        &-add {
+                            color: rgb(1, 89, 0);
+                            transition: all 0.4s;
+                        }
+
+                        &-remove {
+                            display: none;
+                            color: rgb(89, 0, 0);
+                        }
+
+                        &-number {
+                            display: none;
+                        }
+
+                        a:link,
+                        a:visited {
+                            text-decoration: none;
+                            // color: gray;
+                            // pointer-events: none;
+                        }
+                    }
                 }
             }
         }
@@ -105,7 +147,6 @@
     border-radius: 4.5rem;
     animation: animegotoslide 1s forwards;
     padding: 17rem 1rem;
-    border: 2px solid black !important;
 }
 
 .imgwhite-nothover {
