@@ -182,14 +182,28 @@
         position: relative;
         z-index: -4;
 
+        img {
+            filter: invert(63%) sepia(98%) saturate(591%) hue-rotate(10deg) brightness(113%) contrast(94%);
+        }
+
+        &:hover {
+            p {
+                color: $second-color;
+                background-color: $main-color;
+                transition: 0.3s;
+                z-index: 1;
+            }
+        }
+
         .number-order {
-            color: $second-color;
             position: absolute;
             top: -0.5rem;
             left: 55%;
-            background-color: $main-color;
+            color: $main-color;
+            background-color: $second-color;
             padding: 0.3rem 1rem;
             border-radius: 50%;
+            z-index: 1;
         }
 
         a:link,
@@ -201,19 +215,50 @@
             img {
                 width: 5rem;
             }
+        }
+    }
 
-            &:hover {
-                p {
-                    color: $main-color;
-                    background-color: $second-color;
-                    transition: 0.5s;
-                }
+    #anime-add-order {
+        animation: anime-box-shake-add 0.5s forwards;
+    }
 
-                img {
-                    filter: invert(63%) sepia(98%) saturate(591%) hue-rotate(10deg) brightness(113%) contrast(94%);
-                    transition: 0.5s;
-                }
-            }
+    #anime-remove-order {
+        animation: anime-box-shake-remove 0.3s forwards;
+    }
+
+    @keyframes anime-box-shake-add {
+        0% {
+            transform: scale(0.4, 0.4);
+        }
+
+        80% {
+            transform: scale(1.1, 1.1);
+        }
+
+        100% {
+            transform: scale(1, 1);
+        }
+    }
+
+    @keyframes anime-box-shake-remove {
+        0% {
+            transform: rotate(10deg);
+        }
+
+        30% {
+            transform: rotate(-10deg);
+        }
+
+        60% {
+            transform: rotate(10deg);
+        }
+
+        90% {
+            transform: rotate(-10deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
         }
     }
 

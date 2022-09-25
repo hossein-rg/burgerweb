@@ -17,6 +17,7 @@
                 width: 1.8rem;
                 height: 1.8rem;
                 border-radius: 50%;
+                background-color: rgb(210, 210, 210);
 
                 a:link,
                 a:visited {
@@ -24,7 +25,6 @@
                     width: 1.8rem;
                     height: 1.8rem;
                     border-radius: 50%;
-                    border: solid black 1px;
                 }
             }
         }
@@ -104,8 +104,7 @@
                         a:link,
                         a:visited {
                             text-decoration: none;
-                            // color: gray;
-                            // pointer-events: none;
+                            text-shadow: 0.1rem 0.1rem 1rem gray;
                         }
                     }
                 }
@@ -138,7 +137,7 @@
 }
 
 #dthoverscript {
-    background-color: gold;
+    background-color: gold !important;
 }
 
 .dtboxshimg {

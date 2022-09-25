@@ -251,6 +251,7 @@ function getSelection_sec6(what){
     // smooth scroll
     let slice_number=e.target.className;
     let slice_final = Number(slice_number.slice(8)-1);
+    console.log(slice_final);
     let scrl_smooth =document.querySelectorAll('.section6-img > *');
     scrl_smooth[slice_final].scrollIntoView({
       behavior:'smooth',inline:'center'
@@ -305,8 +306,9 @@ const bankordersec6 = {
   4:[0,0,0,0,0],
   5:[0,0,0,0,0],
   6:[0,0,0,0,0,0],
+  all:0,
 }
-// add order and detail
+// add order element and detail order
 boxlistSec5.addEventListener('click',function(element){
   if(element.srcElement.nodeName != 'IMG') return;
   const boxSection6_detail = document.querySelector('.section6-img');
@@ -341,8 +343,10 @@ boxlistSec5.addEventListener('click',function(e){
     }
   
   
-    // 
+    // click + btn
+  let numberShop = document.querySelector('.number-order');
   let selectData = document.querySelector('.section6-img');
+  let animeShakeOrder = document.querySelector('.header-bottom-orderbox');
 selectData.addEventListener('click',function(e){
   if(e.path[1].classList[0] != "order-section6") return;
   let childrenOrder = e.path[1].children;
@@ -356,13 +360,19 @@ selectData.addEventListener('click',function(e){
   let howsec5 = Number(selectDataSet.slice(0,1));
   // click btn + -
   if(e.target.className == "order-section6-add"){
+    // animeShakeOrder.removeAttribute('id');
     bankordersec6[howsec5][howsec6-1] += 1;
     numberbtn.textContent = bankordersec6[howsec5][howsec6-1];
-  }
-  if(e.target.className == "order-section6-number"){
-    console.log(1);
+    bankordersec6.all++;
+    numberShop.textContent = bankordersec6.all;
+    // animation order add
+    animeShakeOrder.setAttribute('id',`anime-add-order`);
   }
   if(e.target.className == "order-section6-remove"){
+    bankordersec6.all--;
+    numberShop.textContent = bankordersec6.all;
+    // animation order remove
+    animeShakeOrder.setAttribute('id',`anime-remove-order`);
     if(bankordersec6[howsec5][howsec6-1] == 1){
       removebtn.style.display = "none";
       numberbtn.style.display = "none";
@@ -374,6 +384,7 @@ selectData.addEventListener('click',function(e){
   }
   removebtn.style.display = "block";
   numberbtn.style.display = "block";
+
   // show + only and show - and number
   // for(const child in childrenOrder){
   //   childrenOrder[child].style.display = "block";
@@ -381,5 +392,52 @@ selectData.addEventListener('click',function(e){
   //    childrenOrder[child].textContent ="1";
   //   }
   // }
+    // show + only and show - and number
+  // for(const child in childrenOrder){
+  //   childrenOrder[child].style.display = "block";
+  //   if(child == main){
+  //    childrenOrder[child].textContent ="1";
+  //   }
+  // }
+    // show + only and show - and number
+  // for(const child in childrenOrder){
+  //   childrenOrder[child].style.display = "block";
+  //   if(child == dots){
+  //    childrenOrder[child].textContent ="1";
+  //   }
+  // }
+    // show + only and show - and number
+  // for(const child in childrenOrder){
+  //   childrenOrder[child].style.display = "block";
+  //   if(child == 0){
+  //    childrenOrder[child].textContent ="1";
+  //   }
+  // }
 })
 })
+
+
+// click item section 6 and bigger and show detail
+boxlistSec5.addEventListener('click',function(e){
+  if(e.srcElement.nodeName != 'IMG') return;
+  let clickimg_sec6=document.querySelector('.section6-img');
+  let dots_ses6 = document.querySelector('.point-sec6');
+  clickimg_sec6.addEventListener('click',function(e){
+    let children_sec6img = e.path[2].children;
+    if(e.target.nodeName== "IMG"){
+      for(let j = 0 ;j<children_sec6img.length;j++){
+        children_sec6img[j].setAttribute('class','imgwhite-nothover');
+        dots_ses6.children[j].setAttribute('id','backwhite');
+      }
+      e.path[1].setAttribute('class','dtboxshimg');
+      let nowNumberElement = e.path[1].id.slice(8,12)-1;
+      dots_ses6.children[nowNumberElement].setAttribute('id',"dthoverscript");
+      // scroll smooth
+      let scroll_s =document.querySelectorAll('.section6-img > *');
+      scroll_s[nowNumberElement].scrollIntoView({
+        behavior:"smooth",inline:"center"
+      })
+    }
+  })  
+})
+
