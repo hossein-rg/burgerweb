@@ -216,7 +216,7 @@ function getSelection_sec6(what){
   boxAllSec6.insertAdjacentHTML("beforeend","<div class='section6-img dragscroll'></div><div class='point-sec6'></div>");
   let new_back = document.querySelector('.section6-img');
  for(let i = 0 ; i<banksection6[what].length ; i++){
-   new_back.insertAdjacentHTML('beforeend',`<div class=" sec6-id-${i+1}" id="sec6-id-${i+1}"><img src = "${banksection6[what][i]}"></div>`);
+   new_back.insertAdjacentHTML('beforeend',`<div class=" sec6-id-${i+1}" id="sec6-id-${i+1}"><img data-srcimg =${i} src = "${banksection6[what][i]}"></div>`);
  }
 
 
@@ -297,7 +297,11 @@ const bankSection6_superdetail = {
   "سوسیس پپرونی, سس گوجه , پنیر رنده فوگا , ریحان",
   "قارچ, زیتون , سینه مرغ , زیتون ,فلفل دلمه ای , ذرت , ریحان",
   "اختاپوس, صدف , میگو , پنیر ایتالیایی",
-]
+],
+3:[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  4:[0,0,0,0,0],
+  5:[0,0,0,0,0],
+  6:[0,0,0,0,0,0],
 }
 const bankordersec6 = {
   1:[0,0,0,0,0,0,0,0,0,0,0,0],
@@ -315,7 +319,7 @@ boxlistSec5.addEventListener('click',function(element){
   for(let i = 1 ; i<=boxSection6_detail.children.length;i++){
     const Section6_detail = document.querySelector(`.sec6-id-${i}`);
     let howElement = element.target.dataset.picsec5;
-    Section6_detail.insertAdjacentHTML('beforeend',`<div class="section6-all-detail"><p>${bankSection6_detail[howElement][i-1]}</p>
+    Section6_detail.insertAdjacentHTML('beforeend',`<div class="section6-all-detail"><p>${bankSection6_detail[howElement][i-1]}</p><p class="superDetail_section6">${bankSection6_superdetail[howElement][i-1]}</p>
     <div class="order-section6 order-section6-${howElement}${i}"
     data-sec6="${howElement}${i}">
     <a href="javascript:void(0)" class="order-section6-add" >+</a>
@@ -440,4 +444,15 @@ boxlistSec5.addEventListener('click',function(e){
     }
   })  
 })
-
+// show super detail
+// boxlistSec5.addEventListener('click',function(e){
+//   if(e.srcElement.nodeName != 'IMG') return;
+//   let howsec5 = e.target.dataset.picsec5;
+//   document.querySelector('.section6-img').addEventListener('click',function(e){
+//     let targetElement = e.path[2].children;
+//     if(e.target.nodeName== "IMG"){
+//       let nowImg = e.target.dataset.srcimg;
+//       document.querySelector()
+//     }
+// })
+// })
