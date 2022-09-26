@@ -17,6 +17,7 @@
                 width: 1.8rem;
                 height: 1.8rem;
                 border-radius: 50%;
+                background-color: rgb(210, 210, 210);
 
                 a:link,
                 a:visited {
@@ -24,7 +25,6 @@
                     width: 1.8rem;
                     height: 1.8rem;
                     border-radius: 50%;
-                    border: solid black 1px;
                 }
             }
         }
@@ -80,6 +80,11 @@
 
                     }
 
+                    .superDetail_section6 {
+                        position: absolute;
+                        display: none;
+                    }
+
                     .order-section6 {
                         display: flex;
                         font-size: 3rem;
@@ -104,8 +109,7 @@
                         a:link,
                         a:visited {
                             text-decoration: none;
-                            // color: gray;
-                            // pointer-events: none;
+                            text-shadow: 0.1rem 0.1rem 1rem gray;
                         }
                     }
                 }
@@ -138,15 +142,42 @@
 }
 
 #dthoverscript {
-    background-color: gold;
+    background-color: gold !important;
 }
 
-.dtboxshimg {
-    transition: 0.5s;
-    background-color: rgba(213, 213, 213, 0.3);
-    border-radius: 4.5rem;
-    animation: animegotoslide 1s forwards;
-    padding: 17rem 1rem;
+// click img section 6 and bigger and show detail
+.section6-box {
+    .dtboxshimg {
+        transition: 0.5s;
+        background-color: rgba(213, 213, 213, 0.3);
+        border-radius: 5rem;
+        animation: animegotoslide 1s forwards;
+        padding: 17rem 1rem;
+
+        img {
+            opacity: 0.4;
+        }
+
+        .section6-all-detail {
+            top: 50%;
+            height: 50%;
+            transition: 0.5s;
+            gap: 15%;
+
+            p {
+                text-align: right;
+                padding-right: 1rem;
+            }
+
+            .superDetail_section6 {
+                position: relative;
+                display: block;
+                font-size: 1rem;
+                color: gray;
+                padding: 1rem 2rem;
+            }
+        }
+    }
 }
 
 .imgwhite-nothover {
