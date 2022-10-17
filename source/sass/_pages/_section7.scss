@@ -1,0 +1,40 @@
+.section7 {
+    width: 100%;
+    display: flex;
+    direction: rtl;
+    margin-top: 10rem;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        width: 33%;
+
+
+        div {
+            display: flex;
+            flex-direction: row;
+            width: fit-content;
+            gap: 1rem;
+
+            p {
+                font-size: 2.5rem;
+                font-family: font2;
+            }
+
+            img {
+                width: 5rem;
+            }
+        }
+
+        img {
+            width: 30rem;
+        }
+
+        p {
+            width: 80%;
+        }
+    }
+}
