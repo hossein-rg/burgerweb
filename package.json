@@ -6,12 +6,15 @@
   "scripts": {
     "compile:sass": "node-sass source/sass/tA4-sass.scss source/css/tA4-css.css -w",
     "start": "parcel source/index.html",
-    "build": "parcel build source/index.html"
+    "build": "parcel build source/index.html",
+    "server": "live-server source"
   },
   "author": "hossein",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^7.0.1",
-    "parcel": "^2.7.0"
+    "node-sass": "^7.0.1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
   }
 }
