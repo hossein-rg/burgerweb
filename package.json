@@ -5,8 +5,6 @@
   "mainof": "tA3-js.js",
   "scripts": {
     "compile:sass": "node-sass source/sass/tA4-sass.scss source/css/tA4-css.css -w",
-    "start": "parcel source/index.html",
-    "build": "parcel build source/index.html",
     "server": "live-server source"
   },
   "author": "hossein",

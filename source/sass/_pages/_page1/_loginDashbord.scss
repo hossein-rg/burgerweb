@@ -1,0 +1,298 @@
+.body {
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(30deg, rgba(255, 140, 0, 0.485), rgba(0, 0, 0, 0.474)), url('/image/img/section-2-img.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    font-family: font2;
+    direction: rtl;
+    gap: 2rem;
+    background-color: rgb(255, 166, 2);
+    color: black;
+    width: 40rem;
+    height: 27rem;
+    margin: auto;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    border-radius: 1rem;
+    // display: none;
+
+
+
+    &-detail {
+        margin-bottom: 2rem;
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .name-input {
+        display: flex;
+        justify-content: center;
+        gap: 7rem;
+        margin-left: 9rem;
+    }
+
+    .number-input {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-left: 9rem;
+
+        input {
+            direction: rtl;
+        }
+    }
+
+    .verify-input {
+        display: flex;
+        justify-content: left;
+        display: inline-flex;
+        margin-bottom: 1rem;
+        margin-left: 1.5rem;
+
+        button {
+            font-family: font2;
+            font-size: 2rem;
+            padding: 0.5rem 2rem;
+            background-color: rgb(17, 17, 17);
+            color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 1rem;
+        }
+    }
+}
+
+
+.confirmCode {
+    background-color: rgb(255, 166, 2);
+    width: 40rem;
+    direction: rtl;
+    height: 27rem;
+    margin: auto;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    border-radius: 1rem;
+
+    display: none;
+
+    &-detail {
+        margin-bottom: 5rem;
+        padding: 3.5rem 3.5rem 0 3.5rem;
+    }
+
+    &-input {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 0 3.5rem;
+    }
+
+    .checkORback {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 5rem;
+        direction: ltr;
+        gap: 16rem;
+    }
+}
+
+// global 
+.remove-arrow {
+
+    // remove arrow input
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+}
+
+.input_login {
+    font-size: 2rem;
+    width: 17rem;
+    font-family: font2;
+    text-align: center;
+    background-color: rgb(17, 17, 17);
+    color: #fff;
+
+    &:focus {
+        outline: 0;
+        background-color: #fff;
+        color: rgb(17, 17, 17);
+        transition: 0.5s;
+    }
+}
+
+.sublog {
+    font-family: font2;
+    font-size: 2rem;
+    padding: 0.5rem 2rem;
+    background-color: rgb(17, 17, 17);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
+}
+
+// spinner loading
+.lds-ring-hide {
+    display: none;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+
+    &::after {
+        content: '';
+        background-color: rgba(255, 255, 255, 0.511);
+        position: absolute;
+        top: -9.5rem;
+        left: -16rem;
+        width: 40rem;
+        border-radius: 1rem;
+        height: 27rem;
+    }
+
+    div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        margin: 8px;
+        border: 8px solid #fff;
+        border-radius: 50%;
+        animation: lds_ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #fff transparent transparent transparent;
+
+        &:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        &:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+    }
+}
+
+
+@keyframes lds_ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+// popup login
+
+.poplogin {
+    width: 30rem;
+    height: 7rem;
+    display: flex;
+    position: absolute;
+    left: 5rem;
+    top: -8rem;
+    background-color: rgba(36, 142, 1, 0.573);
+    justify-content: center;
+    align-items: center;
+    animation: anime-popLogin 2.5s forwards;
+}
+
+@keyframes anime-popLogin {
+    0% {
+        transform: scale(0.2);
+    }
+
+    20% {
+        transform: scale(1.2);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+// close dashboard
+.close-btn {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    position: absolute;
+    top: 26.5rem;
+    left: 49.5rem;
+    z-index: 1;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:before,
+    &::after {
+        position: absolute;
+        left: 15px;
+        content: '';
+        height: 33px;
+        width: 2px;
+        background-color: #333;
+    }
+
+    &::before {
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+    }
+}
+
+
+
+
+
+
+// media query
+
+@media screen and (max-width: 580px) {
+    .body {
+        background: url('');
+        background: linear-gradient(30deg, rgba(255, 140, 0, 0.485), rgba(0, 0, 0, 0.474))
+    }
+}
