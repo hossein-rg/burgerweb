@@ -18,6 +18,10 @@
             position: relative;
             transform: rotate(180deg);
             padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            height: 20rem;
+            justify-content: end;
 
             p {
                 margin-top: 0.5rem;

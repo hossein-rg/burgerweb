@@ -6,6 +6,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    position: fixed;
 }
 
 .loginForm {
@@ -22,6 +23,7 @@
     margin-top: 50vh;
     transform: translateY(-50%);
     border-radius: 1rem;
+    position: relative;
     // display: none;
 
 
@@ -249,15 +251,14 @@
 
 // close dashboard
 .close-btn {
-    position: absolute;
     right: 32px;
     top: 32px;
     width: 32px;
     height: 32px;
     opacity: 0.3;
     position: absolute;
-    top: 26.5rem;
-    left: 49.5rem;
+    top: 0.7rem;
+    right: 36rem;
     z-index: 1;
 
     &:hover {
@@ -290,9 +291,29 @@
 
 // media query
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 650px) {
     .body {
+        width: 100%;
         background: url('');
-        background: linear-gradient(30deg, rgba(255, 140, 0, 0.485), rgba(0, 0, 0, 0.474))
+        background: linear-gradient(30deg, rgba(255, 140, 0, 0.485), rgba(0, 0, 0, 0.474));
+
+        .loginForm {
+            gap: 1.5rem;
+            width: 31rem;
+
+            &-detail {
+                padding: 0 2rem 0 1rem;
+            }
+
+            .name-input,
+            .number-input {
+                justify-content: left;
+                margin-left: 3rem;
+            }
+        }
+    }
+
+    .close-btn {
+        right: 27rem;
     }
 }
