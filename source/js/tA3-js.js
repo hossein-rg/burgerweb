@@ -254,7 +254,7 @@ function getSelection_sec6(what) {
       console.log(slice_final);
       let scrl_smooth = document.querySelectorAll('.section6-img > *');
       scrl_smooth[slice_final].scrollIntoView({
-        behavior: 'smooth', inline: 'center'
+        behavior: "smooth", block: "nearest", inline: 'center'
       });
     }
   })
@@ -408,3 +408,8 @@ boxlistSec5.addEventListener('click', function (e) {
 //     }
 // })
 // })
+
+
+
+// test loacation
+
