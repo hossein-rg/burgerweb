@@ -1,0 +1,83 @@
+.section8 {
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+    font-family: font2;
+    position: relative;
+
+    img {
+        width: 3rem;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 60%;
+
+        p {
+            width: 60%;
+        }
+    }
+
+    .section8--call {
+
+        a:link,
+        a:visited {
+            direction: ltr;
+            text-decoration: none;
+            color: goldenrod;
+            font-size: 2rem;
+        }
+
+        a:hover {
+            color: #000;
+            transition: 0.3s;
+        }
+    }
+
+    .section8--getEmail {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1.5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+
+
+        &--boxEmail {
+            gap: 0;
+            position: relative;
+
+            input {
+                padding: 1rem 5rem 1rem 1rem;
+                width: 30rem;
+                font-size: 1.5rem;
+                border-radius: 5rem;
+                border: .2rem solid gray;
+                direction: ltr;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+            }
+
+            img {
+                position: absolute;
+                right: 0.5rem;
+                width: 5rem;
+                filter: invert(74%) sepia(79%) saturate(764%) hue-rotate(338deg) brightness(104%) contrast(101%);
+                cursor: pointer;
+
+                &:hover {
+                    transition: 0.1s;
+                    filter: invert(0%) sepia(6%) saturate(7464%) hue-rotate(343deg) brightness(92%) contrast(98%);
+                }
+            }
+        }
+    }
+}

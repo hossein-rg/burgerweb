@@ -1,40 +1,121 @@
 .section7 {
-    width: 100%;
+    width: 90%;
     display: flex;
+    align-items: center;
     direction: rtl;
-    margin-top: 10rem;
+    margin: auto;
+    padding: 1rem 2rem;
+    margin-top: 5rem;
+    background: linear-gradient(360deg, rgb(200, 200, 200), white);
 
     div {
+        width: 33%;
+        height: 50rem;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
         gap: 2rem;
-        width: 33%;
+        position: relative;
 
+        img {
+            width: 25rem;
+        }
+
+        &~p {
+            width: 80%;
+        }
 
         div {
             display: flex;
             flex-direction: row;
-            width: fit-content;
-            gap: 1rem;
-
-            p {
-                font-size: 2.5rem;
-                font-family: font2;
-            }
+            width: 100%;
+            align-items: center;
+            gap: 2rem;
+            height: min-content;
 
             img {
                 width: 5rem;
             }
         }
+    }
 
-        img {
-            width: 30rem;
-        }
+    &-sec1 {
+        margin-top: -10%;
+        animation: anime1-section7 5s;
 
-        p {
-            width: 80%;
+        &::after {
+            content: '';
+            inset: 0;
+            position: absolute;
+            top: 30%;
+            right: -4%;
+            width: 100%;
+            height: 50%;
+            border-right: 0.2rem dashed goldenrod;
+            z-index: 0;
         }
+    }
+
+    &-sec2 {
+        margin-top: 10%;
+        animation: anime2-section7 1s 1s;
+
+        &::after {
+            content: '';
+            inset: 0;
+            position: absolute;
+            top: 40%;
+            right: -4%;
+            width: 100%;
+            height: 50%;
+            border-right: 0.2rem dashed goldenrod;
+            z-index: 0;
+        }
+    }
+
+    &-sec3 {
+        margin-top: 25%;
+        animation: anime3-section7 1s 1.5s;
+
+        &::after {
+            content: '';
+            inset: 0;
+            position: absolute;
+            top: 45%;
+            right: -4%;
+            width: 100%;
+            height: 50%;
+            border-right: 0.2rem dashed goldenrod;
+            z-index: 0;
+        }
+    }
+}
+
+@keyframes anime1-section7 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes anime2-section7 {
+    0% {
+        transform: translate(100%, -25%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes anime3-section7 {
+    0% {
+        transform: translate(100%, -25%);
+    }
+
+    100% {
+        transform: translate(0, 0);
     }
 }
