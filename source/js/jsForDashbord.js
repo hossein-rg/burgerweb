@@ -56,3 +56,18 @@ backToNumber.addEventListener('click', function () {
 submitLogin.addEventListener('click', function () {
     spinnerShow.setAttribute('class', 'lds-ring-hide')
 })
+
+
+// finally login and join to dashbord
+const EntryConfirmation = document.querySelector('.finallyLogin');
+const checkCodeFinally = document.querySelector('.input_login_finally');
+const alertError = document.querySelector('.confirmCode-detail');
+EntryConfirmation.addEventListener('click', function () {
+    console.log(checkCodeFinally.value)
+    if (checkCodeFinally.value == 8888)
+        window.location.href = "./mainDashbord"
+    else {
+        alertError.insertAdjacentHTML('beforebegin', '<p class="alertErrorForCodeLogin">کد وارد شده صحیح نمیباشد</p>')
+    }
+})
+

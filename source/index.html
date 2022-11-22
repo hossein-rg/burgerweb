@@ -53,7 +53,7 @@
                     <a href="#section7">
                         <li>پروسه تحویل</li>
                     </a>
-                    <a href="#">
+                    <a href="#section8">
                         <li>ارتباط با ما</li>
                     </a>
                 </ul>
@@ -65,7 +65,7 @@
                 <a href="tel:+989934931439"><img src="./image/logo/icons8-whatsapp.svg" alt="wattsap"></a>
             </div>
             <div class="header-bottom-orderbox">
-                <a href="./dashbord.html" target="_self">
+                <a href="#" target="_self">
                     <p class="number-order">0</p><img src="./image/logo/shop-bag.svg" alt="">
                 </a>
                 <div style="display:none" class="showBoxMainOrder">
@@ -218,7 +218,7 @@
                 <p>انتخاب</p>
                 <img src="./image/img/sec7/fav1.svg">
             </div>
-            <p class="section7-sec2-detail">غذای خودتون رو انتخاب کنید هرچی که دوست داری در آخر نوشیدنی یادت نره</p>
+            <p class="section7-sec2-detail">هرچی که دوست داری انتخاب کن در اخر نوشیدنی یادت نره</p>
         </div>
         <div class="section7-sec2">
             <img class="section7-sec2-img" src="./image/img/sec7/holeburger.png">
@@ -239,7 +239,7 @@
                 صورت رایگان ارسال میکنیم </p>
         </div>
     </div>
-    <div class="section8">
+    <div class="section8" id="section8">
         <div class="section8--location">
             <img src="./image/logo/section8/loacation.png">
             <p>سعادت آباد، میدان کاج، ابتدای خیابان علامه شمالی، خیابان اقبال ملی
@@ -256,11 +256,17 @@
         <div class="section8--getEmail">
             <p>برای اطلاع از پیشنهادهای ویژه و تبلیغات و تخفیف های ما ایمیل خود را وارد نمایید .</p>
             <div class="section8--getEmail--boxEmail">
-                <input type="email">
-                <img src="./image/logo/section8/emaillogo.svg">
+                <input class="section8--getEmail--inputEmail" type="email" name="email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                <img class="section8--getEmail--sendEmail" src="./image/logo/section8/emaillogo.svg">
+
             </div>
+            <p class="section8--getEmail--chekcout">ایمیل شما وارد نشده</p>
         </div>
     </div>
+    <footer>
+        <p><a href="https://telegram.me/hosseinrg">HRG11</a> ©. All rights reserved.</p>
+    </footer>
     <script type="module" src="./js/tA3-js.js"></script>
 </body>
 
