@@ -411,5 +411,54 @@ boxlistSec5.addEventListener('click', function (e) {
 
 
 
-// test loacation
+// section 7
+const section7 = document.querySelector('.section7');
+const section7s1 = document.querySelector('.section7-sec1');
+const section7s2 = document.querySelector('.section7-sec2');
+const section7s3 = document.querySelector('.section7-sec3');
 
+const ReactionSec7 = (entries) => {
+  entries.forEach((el) => {
+    if (el.isIntersecting) {
+      section7s1.style.visibility = 'visible'
+      section7s1.style.animation = 'anime1-section7 .5s'
+      section7s2.style.visibility = 'visible'
+      section7s2.style.animation = 'anime2-section7 .5s'
+      section7s3.style.visibility = 'visible'
+      section7s3.style.animation = 'anime3-section7 .5s'
+    }
+  })
+
+}
+
+const configSec7 = {
+  root: null,
+  threshold: .3
+}
+const observerSec7 = new IntersectionObserver(ReactionSec7, configSec7);
+
+observerSec7.observe(section7);
+
+// validation email 
+const emailCheck = document.querySelector('.section8--getEmail--inputEmail');
+const sendEmail = document.querySelector('.section8--getEmail--sendEmail');
+const ShowResultEmail = document.querySelector('.section8--getEmail--chekcout');
+sendEmail.addEventListener('click', function () {
+  if (!emailCheck.validity.patternMismatch && (emailCheck.value != '')) {
+    ShowResultEmail.textContent = 'ایمیل شما ثبت شد , منتظر تخفیف های ما باشید';
+    ShowResultEmail.style.color = 'rgb(172, 255, 49)';
+  }
+  else {
+    ShowResultEmail.textContent = 'لطفا ایمیل خود را به درستی وارد نمایید';
+    emailCheck.value = '';
+    ShowResultEmail.style.color = "rgb(255, 118, 118)";
+  }
+})
+
+
+// go to dashbord
+
+document.querySelector('.header-bottom-orderbox')
+  .addEventListener('click', function () {
+    window.location.href = "../dashbord"
+  })

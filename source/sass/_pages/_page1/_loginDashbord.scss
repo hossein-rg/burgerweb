@@ -73,7 +73,7 @@
     }
 }
 
-
+// page 2 for confirm code
 .confirmCode {
     background-color: rgb(255, 166, 2);
     width: 40rem;
@@ -83,7 +83,6 @@
     margin-top: 50vh;
     transform: translateY(-50%);
     border-radius: 1rem;
-
     display: none;
 
     &-detail {
@@ -284,9 +283,32 @@
     }
 }
 
+// alert error for wrond code
 
+.alertErrorForCodeLogin {
+    position: absolute;
+    font-size: 1.3rem;
+    margin-top: -11.5rem;
+    margin-right: 10rem;
+    background-color: #811f1f;
+    padding: 2rem 3rem;
+    border-radius: 3rem;
+    color: #ffffff;
+    font-family: 'font2';
+    animation: anime_alertError 3s forwards;
+}
 
+@keyframes anime_alertError {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
 
 
 // media query
@@ -309,6 +331,29 @@
             .number-input {
                 justify-content: left;
                 margin-left: 3rem;
+            }
+        }
+
+        .confirmCode {
+            gap: 1.5rem;
+            width: 31rem;
+
+            &-input {
+                padding: 0;
+                justify-content: center;
+            }
+
+            .checkORback {
+                gap: 8rem;
+            }
+
+            .poplogin {
+                left: 0;
+            }
+
+            .alertErrorForCodeLogin {
+                margin-right: 0;
+                left: 15%;
             }
         }
     }
