@@ -1,0 +1,411 @@
+.bodyDashbord {
+    display: flex;
+    direction: rtl;
+    gap: 2rem;
+    width: 93vw;
+}
+
+.mainDashbord {
+    direction: rtl;
+    margin-top: 1rem;
+    color: white;
+    flex-grow: 2;
+    width: 25vw;
+
+    &--content {
+        direction: rtl;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        position: relative;
+        background-color: rgb(0, 71, 65);
+        border-radius: 3rem;
+        // float: right;
+        padding: 2rem 3rem;
+        position: relative;
+        width: 25vw;
+        height: 15rem;
+
+        img {
+            width: 7rem;
+            border-radius: 50%;
+        }
+
+        &__welcome {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            p {
+                font-family: font2;
+                font-size: 0.8vw;
+
+                b {
+                    font-size: 1.9rem;
+                    font-family: font1;
+                    color: goldenrod;
+                }
+            }
+        }
+
+        .varizpool {
+            border: none;
+            padding: 1rem 3rem;
+            font-family: font2;
+            font-size: 1rem;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transform: translateY(-100%);
+            background-color: rgba(16, 188, 62, 0.785);
+            border-radius: 0 6rem 0 5rem;
+            color: white;
+        }
+
+        .logOutDashbord {
+            padding: 1rem 3rem;
+            font-family: font2;
+            font-size: 1rem;
+            border: none;
+            background-color: rgba(255, 59, 59, 0.553);
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 5rem 0 6rem 0;
+            color: white;
+        }
+    }
+
+    .mainDashbord-navbar {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        width: 40rem;
+
+        .burger-rounded {
+            width: 4rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: none;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            font-family: font2;
+            gap: 2rem;
+            background-color: rgba(254, 185, 9, 0.744);
+            border-radius: 50%;
+            width: 7rem;
+            height: 7rem;
+            padding: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                animation: anime-mainDashobord-navbar 1s forwards;
+
+                p {
+                    display: block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
+
+            img {
+                width: 5rem;
+            }
+
+            p {
+                display: none;
+                color: rgb(0, 0, 0);
+            }
+        }
+    }
+}
+
+
+.box-order-dashbord {
+    background-color: rgba(39, 39, 39, 0.112);
+    width: 90vw;
+    margin: auto;
+    height: 100vh;
+}
+
+
+.hoverShowOrder {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 20rem;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    font-family: font2;
+    flex-grow: 1;
+    color: rgb(255, 255, 255);
+
+    img {
+        padding: 1rem;
+        width: 7rem;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .mainOrderDashbord,
+    .shakeOrderDashbord {
+        background-color: rgba(110, 110, 110, 0.434);
+        padding: 1rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        text-align: center;
+        width: 70%;
+    }
+
+    .mainOrderDashbord {
+        width: 80%;
+        background-color: rgba(218, 165, 32, 0.675);
+    }
+}
+
+
+
+
+
+
+
+@keyframes anime-mainDashobord-navbar {
+    0% {
+        width: 7rem;
+    }
+
+    5% {
+        border-radius: 1rem;
+    }
+
+    100% {
+        width: 30rem;
+        border-radius: 1rem;
+    }
+}
+
+
+@media screen and(max-width:1185px) {
+    .mainDashbord {
+        width: 30rem;
+
+        &--content {
+            width: 30rem;
+
+            &__welcome {
+                gap: 0;
+
+                p {
+                    font-size: 1rem;
+
+                    b {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and(max-width:650px) {
+    body {
+        width: 95%;
+    }
+
+    .bodyDashbord {
+        flex-direction: column;
+        align-items: center;
+
+        .hoverShowOrder {
+            top: 20rem;
+            left: 0;
+        }
+    }
+
+    .mainDashbord {
+        .mainDashbord-navbar {
+            padding: 0;
+            margin-top: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4rem;
+            height: 4rem;
+
+            &:hover {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 90%;
+                transition: 0.5s;
+                white-space: nowrap;
+                overflow: hidden;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.679);
+                z-index: 1;
+                padding: 1rem;
+
+                .mainDashbord-navbar-1 {
+                    margin-top: 6rem;
+                }
+
+                div {
+                    display: flex;
+                    width: 90%;
+                    border-radius: 2rem;
+                    animation: none;
+
+                    img {
+                        width: 4rem;
+                    }
+
+                    p {
+                        display: block;
+                    }
+                }
+            }
+
+            .burger-rounded {
+                display: block;
+            }
+
+            div {
+                // edit
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 
+// &--content {
+//     direction: rtl;
+//     display: flex;
+//     align-items: flex-start;
+//     gap: 1rem;
+//     position: relative;
+//     background-color: rgb(9, 9, 9);
+//     border-radius: 4rem;
+//     // float: right;
+//     padding: 2rem 3rem;
+//     position: relative;
+//     width: 40rem;
+//     height: 15rem;
+
+//     img {
+//         width: 10rem;
+//         border-radius: 50%;
+//     }
+
+//     &__welcome {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 1rem;
+
+//         p {
+//             font-family: font2;
+//             font-size: 1.4rem;
+
+//             b {
+//                 font-size: 1.9rem;
+//                 font-family: font1;
+//                 color: goldenrod;
+//             }
+//         }
+//     }
+
+//     .varizpool {
+//         border: none;
+//         padding: 1rem 3rem;
+//         font-family: font2;
+//         font-size: 1.2rem;
+//         position: absolute;
+//         top: 100%;
+//         left: 0;
+//         transform: translateY(-100%);
+//         background-color: rgba(16, 188, 62, 0.785);
+//         border-radius: 0 5rem 0 5rem;
+//         color: white;
+//     }
+
+//     .logOutDashbord {
+//         padding: 1rem 3rem;
+//         font-family: font2;
+//         font-size: 1.2rem;
+//         border: none;
+//         background-color: rgba(255, 59, 59, 0.553);
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         border-radius: 5rem 0 5rem 0;
+//         color: white;
+
+//     }
+// }
+
+// .mainDashbord-navbar {
+//     margin-top: 1rem;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1rem;
+//     padding: 1rem;
+//     width: 40rem;
+
+//     div {
+//         display: flex;
+//         align-items: center;
+//         font-family: font2;
+//         gap: 2rem;
+//         background-color: rgba(254, 185, 9, 0.744);
+//         border-radius: 50%;
+//         width: 7rem;
+//         height: 7rem;
+//         padding: 1rem;
+//         cursor: pointer;
+
+//         &:hover {
+//             animation: anime-mainDashobord-navbar 1s forwards;
+
+//             p {
+//                 display: block;
+//                 white-space: nowrap;
+//                 overflow: hidden;
+//             }
+//         }
+
+//         img {
+//             width: 5rem;
+//         }
+
+//         p {
+//             display: none;
+//             color: rgb(0, 0, 0);
+//         }
+//     }
+// }

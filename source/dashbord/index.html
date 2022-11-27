@@ -21,7 +21,8 @@
             <p class="loginForm-detail">برای ورود یا ثبت نام شماره تلفن خود را وارد نمایید :</p>
             <div class="name-input">
                 <p>نام :</p>
-                <input class="input_log_name input_login" type="text">
+                <input class="input_log_name input_login" type="text"
+                    pattern="^[\u0600-\u06FF\uFB8A\u067E\u0686\u06AF]+$">
             </div>
             <div class="number-input">
                 <p>شماره تلفن :</p>
@@ -36,7 +37,7 @@
                 نمایید :</p>
             <div class="confirmCode-input">
                 <p>کد تایید :</p>
-                <input class="remove-arrow input_login input_login_finally" type="number">
+                <input class="remove-arrow input_login input_login_finally" type="number" placeholder="code: 8888">
             </div>
             <div class="checkORback">
                 <button class="sublog finallyLogin">تایید</button>

@@ -18,7 +18,7 @@ submit.addEventListener('click', function (e) {
     let nameCheck = FirstName.value;
     let numberCheck = number.value;
     let renderForConfirm = 0;
-    if (nameCheck.length > 2) {
+    if ((nameCheck.length > 2) && !FirstName.validity.patternMismatch) {
         FirstName.style.backgroundColor = 'rgb(75, 167, 55)';
         renderForConfirm++;
     }
@@ -26,8 +26,8 @@ submit.addEventListener('click', function (e) {
         number.style.backgroundColor = 'rgb(75, 167, 55)';
         renderForConfirm++;
     }
-    if (nameCheck.length < 2) {
-        alert('لطفا نام خود را وارد نمایید')
+    if (FirstName.validity.patternMismatch || (nameCheck.length <= 2)) {
+        alert('لطفا نام خود را صحیح و به صورت فارسی وارد نمایید')
         FirstName.style.backgroundColor = 'rgb(252, 102, 65)';
         renderForConfirm = 0;
     } if (numberCheck.length != 11) {
@@ -70,4 +70,3 @@ EntryConfirmation.addEventListener('click', function () {
         alertError.insertAdjacentHTML('beforebegin', '<p class="alertErrorForCodeLogin">کد وارد شده صحیح نمیباشد</p>')
     }
 })
-
