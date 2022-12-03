@@ -3,8 +3,11 @@ import { bankSec5 } from "./bankSection5.js";
 import { banksection6, bankSection6_detail, bankSection6_superdetail, bankordersec6, bankpricesec6 } from "./bankSection6.js";
 
 
-// fine work
+// save base object to local storage
+localStorage.setItem('baseBankOrder', JSON.stringify(bankordersec6))
 
+// fine work
+let copyNull = bankordersec6;
 
 
 const searchBox = document.querySelector(".header-bottom-search");
@@ -42,6 +45,20 @@ function out_buttom() {
 document.querySelector('.out-popup').addEventListener('click', out_buttom);
 
 
+
+// click shop box 
+let animeShakeOrder = document.querySelector('.header-bottom-orderbox');
+let numberShop = document.querySelector('.number-order');
+let previousSelectUser = JSON.parse(localStorage.getItem('userOrder'));
+numberShop.textContent = previousSelectUser.all;
+animeShakeOrder.addEventListener('click', function () {
+  let whatData = Number(numberShop.textContent);
+  console.log(whatData)
+  if (whatData == 0) {
+    let temp = JSON.parse(localStorage.getItem('baseBankOrder'))
+    localStorage.setItem('userOrder', JSON.stringify(temp));
+  }
+})
 
 
 // nav bar sticky
@@ -282,17 +299,19 @@ boxlistSec5.addEventListener('click', function (element) {
 // set order by user
 // return array value
 let copyBankordersec6;
+copyNull = previousSelectUser;
+console.log(previousSelectUser)
 // let nowNumber = 0;
 boxlistSec5.addEventListener('click', function (e) {
   if (e.srcElement.nodeName != 'IMG') return;
   // dont remove order list user 
-  for (const key in bankordersec6) {
-    for (let i = 0; i < bankordersec6[key].length; i++) {
-      if (bankordersec6[key][i] != 0) {
+  for (const key in copyNull) {
+    for (let i = 0; i < copyNull[key].length; i++) {
+      if (copyNull[key][i] != 0) {
         let OrderSet = document.querySelector(`.order-section6-${key}${i + 1}`);
         if (OrderSet != null) {
           OrderSet.children[1].style.display = 'block';
-          OrderSet.children[1].textContent = bankordersec6[key][i];
+          OrderSet.children[1].textContent = copyNull[key][i];
           OrderSet.children[2].style.display = 'block';
         }
       }
@@ -317,30 +336,32 @@ boxlistSec5.addEventListener('click', function (e) {
     // click btn + -
     if (e.target.className == "order-section6-add") {
       // animeShakeOrder.removeAttribute('id');
-      bankordersec6[howsec5][howsec6 - 1] += 1;
-      numberbtn.textContent = bankordersec6[howsec5][howsec6 - 1];
-      bankordersec6.all++;
-      numberShop.textContent = bankordersec6.all;
+      copyNull[howsec5][howsec6 - 1] += 1;
+      numberbtn.textContent = copyNull[howsec5][howsec6 - 1];
+      copyNull.all++;
+      numberShop.textContent = copyNull.all;
       // animation order add
       animeShakeOrder.setAttribute('id', `anime-add-order`);
     }
     if (e.target.className == "order-section6-remove") {
-      bankordersec6.all--;
-      numberShop.textContent = bankordersec6.all;
+      copyNull.all--;
+      numberShop.textContent = copyNull.all;
       // animation order remove
       animeShakeOrder.setAttribute('id', `anime-remove-order`);
-      if (bankordersec6[howsec5][howsec6 - 1] == 1) {
+      if (copyNull[howsec5][howsec6 - 1] == 1) {
         removebtn.style.display = "none";
         numberbtn.style.display = "none";
-        bankordersec6[howsec5][howsec6 - 1] = 0;
+        copyNull[howsec5][howsec6 - 1] = 0;
         return;
       }
-      bankordersec6[howsec5][howsec6 - 1] -= 1;
-      numberbtn.textContent = bankordersec6[howsec5][howsec6 - 1];
+      copyNull[howsec5][howsec6 - 1] -= 1;
+      numberbtn.textContent = copyNull[howsec5][howsec6 - 1];
     }
     removebtn.style.display = "block";
     numberbtn.style.display = "block";
-    copyBankordersec6 = bankordersec6;
+    //save to local storage
+    copyBankordersec6 = copyNull;
+    localStorage.setItem('userOrder', JSON.stringify(copyBankordersec6))
     // show + only and show - and number
     // for(const child in childrenOrder){
     //   childrenOrder[child].style.display = "block";
