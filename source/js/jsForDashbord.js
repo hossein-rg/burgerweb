@@ -9,6 +9,9 @@ let showNumberUser = document.querySelector('.numberUser');
 let spinnerShow = document.querySelector('.lds-ring-hide');
 let backToNumber = document.querySelector('.backToNumber');
 let submitLogin = document.querySelector('.finallyLogin');
+const EntryConfirmation = document.querySelector('.finallyLogin');
+const checkCodeFinally = document.querySelector('.input_login_finally');
+const alertError = document.querySelector('.confirmCode-detail');
 
 // export {bankordersec6};
 // import {copyBankordersec6} from './tA3-js.js';
@@ -36,6 +39,8 @@ submit.addEventListener('click', function (e) {
         renderForConfirm = 0;
     }
     if (renderForConfirm == 2) {
+        // save name to locale storage
+        localStorage.setItem('firstName', JSON.stringify(nameCheck))
         spinnerShow.setAttribute('class', 'lds-ring');
         // function wait
         setTimeout(() => {
@@ -43,6 +48,8 @@ submit.addEventListener('click', function (e) {
             boxConfirm.style.display = 'block';
             showNumberUser.textContent = numberCheck;
         }, 3000);
+        // set empty string to next page
+        checkCodeFinally.value = '';
     }
 })
 
@@ -50,7 +57,12 @@ submit.addEventListener('click', function (e) {
 backToNumber.addEventListener('click', function () {
     boxLogin.style.display = 'flex';
     boxConfirm.style.display = 'none';
-    spinnerShow.setAttribute('class', 'lds-ring-hide')
+    spinnerShow.setAttribute('class', 'lds-ring-hide');
+    number.value = '';
+    FirstName.value = '';
+    FirstName.style.backgroundColor = '';
+    number.style.backgroundColor = '';
+
 })
 
 submitLogin.addEventListener('click', function () {
@@ -59,9 +71,7 @@ submitLogin.addEventListener('click', function () {
 
 
 // finally login and join to dashbord
-const EntryConfirmation = document.querySelector('.finallyLogin');
-const checkCodeFinally = document.querySelector('.input_login_finally');
-const alertError = document.querySelector('.confirmCode-detail');
+
 EntryConfirmation.addEventListener('click', function () {
     console.log(checkCodeFinally.value)
     if (checkCodeFinally.value == 8888)
@@ -70,3 +80,8 @@ EntryConfirmation.addEventListener('click', function () {
         alertError.insertAdjacentHTML('beforebegin', '<p class="alertErrorForCodeLogin">کد وارد شده صحیح نمیباشد</p>')
     }
 })
+
+let whatName = JSON.parse(localStorage.getItem('firstName'));
+if (whatName.length > 2) {
+    window.location.href = "./mainDashbord"
+}
