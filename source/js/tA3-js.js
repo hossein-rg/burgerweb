@@ -18,7 +18,6 @@ const section2 = document.querySelector(".section2");
 const sec2img = document.querySelector(".section2-img");
 
 
-
 // popup search show and close
 
 function showPopSearch() {
@@ -50,7 +49,10 @@ document.querySelector('.out-popup').addEventListener('click', out_buttom);
 let animeShakeOrder = document.querySelector('.header-bottom-orderbox');
 let numberShop = document.querySelector('.number-order');
 let previousSelectUser = JSON.parse(localStorage.getItem('userOrder'));
-numberShop.textContent = previousSelectUser.all;
+if (previousSelectUser) {
+  numberShop.textContent = previousSelectUser.all;
+}
+
 animeShakeOrder.addEventListener('click', function () {
   let whatData = Number(numberShop.textContent);
   console.log(whatData)
@@ -124,10 +126,7 @@ const img2section3 = document.querySelector(".section3-img2");
 
 
 
-
 // anime1
-
-
 
 
 const sec3Anime1 = function (ele) {
@@ -198,6 +197,7 @@ const imgSec5 = document.querySelectorAll('.section5-listpicture li img');
 const ScrollSec5 = document.querySelectorAll('.section5-listpicture li');
 
 boxlistSec5.addEventListener('click', function (e) {
+  // console.log(e.target)
   ScrollSec5[e.target.dataset.picsec5 - 1].scrollIntoView({
     behavior: 'smooth', block: 'start'
   })
@@ -255,7 +255,8 @@ function getSelection_sec6(what) {
   let imgHover = document.querySelector('.section6-img');
   dotsHover.addEventListener('click', function (e) {
     event.preventDefault();
-    let dotinlive = e.path[1];
+    const tickOP = e.composedPath();
+    let dotinlive = tickOP[1];
     if (e.target.className != "point-sec6") {
       // set class for every dot
       for (let i = 0; i < dotsHover.children.length; i++) {
@@ -298,9 +299,9 @@ boxlistSec5.addEventListener('click', function (element) {
 })
 // set order by user
 // return array value
-let copyBankordersec6;
-copyNull = previousSelectUser;
-console.log(previousSelectUser)
+// let copyBankordersec6;
+// copyNull = previousSelectUser;
+// console.log(previousSelectUser)
 // let nowNumber = 0;
 boxlistSec5.addEventListener('click', function (e) {
   if (e.srcElement.nodeName != 'IMG') return;
@@ -322,20 +323,22 @@ boxlistSec5.addEventListener('click', function (e) {
   let selectData = document.querySelector('.section6-img');
   let animeShakeOrder = document.querySelector('.header-bottom-orderbox');
   selectData.addEventListener('click', function (e) {
-    if (e.path[1].classList[0] != "order-section6") return;
-    let childrenOrder = e.path[1].children;
+    const tickOP = e.composedPath();
+    if (tickOP[1].classList[0] != "order-section6") return;
+    let childrenOrder = tickOP[1].children;
     let addbtn = childrenOrder[0];
     let numberbtn = childrenOrder[1];
     let removebtn = childrenOrder[2];
     let selectDataSet = 0;
 
     // slice number data
-    selectDataSet = e.path[1].dataset.sec6;
+    selectDataSet = tickOP[1].dataset.sec6;
     let howsec6 = Number(selectDataSet.slice(1));
     let howsec5 = Number(selectDataSet.slice(0, 1));
     // click btn + -
     if (e.target.className == "order-section6-add") {
       // animeShakeOrder.removeAttribute('id');
+      // console.log(copyNull);
       copyNull[howsec5][howsec6 - 1] += 1;
       numberbtn.textContent = copyNull[howsec5][howsec6 - 1];
       copyNull.all++;
@@ -360,8 +363,8 @@ boxlistSec5.addEventListener('click', function (e) {
     removebtn.style.display = "block";
     numberbtn.style.display = "block";
     //save to local storage
-    copyBankordersec6 = copyNull;
-    localStorage.setItem('userOrder', JSON.stringify(copyBankordersec6))
+    // copyBankordersec6 = copyNull;
+    // localStorage.setItem('userOrder', JSON.stringify(copyBankordersec6))
     // show + only and show - and number
     // for(const child in childrenOrder){
     //   childrenOrder[child].style.display = "block";
@@ -400,14 +403,15 @@ boxlistSec5.addEventListener('click', function (e) {
   let clickimg_sec6 = document.querySelector('.section6-img');
   let dots_ses6 = document.querySelector('.point-sec6');
   clickimg_sec6.addEventListener('click', function (e) {
-    let children_sec6img = e.path[2].children;
+    const tickOP = e.composedPath()
+    let children_sec6img = tickOP[2].children;
     if (e.target.nodeName == "IMG") {
       for (let j = 0; j < children_sec6img.length; j++) {
         children_sec6img[j].setAttribute('class', 'imgwhite-nothover');
         dots_ses6.children[j].setAttribute('id', 'backwhite');
       }
-      e.path[1].setAttribute('class', 'dtboxshimg');
-      let nowNumberElement = e.path[1].id.slice(8, 12) - 1;
+      tickOP[1].setAttribute('class', 'dtboxshimg');
+      let nowNumberElement = tickOP[1].id.slice(8, 12) - 1;
       dots_ses6.children[nowNumberElement].setAttribute('id', "dthoverscript");
       // scroll smooth
       let scroll_s = document.querySelectorAll('.section6-img > *');
@@ -422,7 +426,7 @@ boxlistSec5.addEventListener('click', function (e) {
 //   if(e.srcElement.nodeName != 'IMG') return;
 //   let howsec5 = e.target.dataset.picsec5;
 //   document.querySelector('.section6-img').addEventListener('click',function(e){
-//     let targetElement = e.path[2].children;
+//     let targetElement = tickOP[2].children;
 //     if(e.target.nodeName== "IMG"){
 //       let nowImg = e.target.dataset.srcimg;
 //       document.querySelector()
