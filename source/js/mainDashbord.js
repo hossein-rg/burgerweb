@@ -9,7 +9,7 @@ let value = document.querySelector('.valueOrderTextMain');
 firstNameUser.textContent = JSON.parse(localStorage.getItem('firstName'))
 let allpriceforyou = 0;
 let data = JSON.parse(localStorage.getItem('userOrder'));
-
+if(data){
 for (let a = 1; a < 7; a++) {
     for (let j = 0; j < data[a].length; j++) {
         if (data[a][j] == 0) continue;
@@ -34,6 +34,7 @@ for (let a = 1; a < 7; a++) {
         }
     }
 }
+}
 if (allpriceforyou > 999) {
     value.textContent = `${Math.floor(allpriceforyou / 1000)}میلیون و ${allpriceforyou % 1000}هزار تومان`
 }
@@ -48,6 +49,7 @@ let logout = document.querySelector('.logOutDashbord');
 logout.addEventListener('click', function () {
     window.location.href = "/"
     localStorage.setItem('firstName', JSON.stringify(''));
+    localStorage.setItem('userOrder' , JSON.stringify(''))
 })
 
 

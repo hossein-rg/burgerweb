@@ -1,15 +1,13 @@
 
 // querySelectors
-let submit = document.querySelector('.submit_login');
-let FirstName = document.querySelector('.input_log_name');
-let number = document.querySelector('.input_log_number');
+// let submit = document.querySelector('.submit_login');
 let boxLogin = document.querySelector('.loginForm');
 let boxConfirm = document.querySelector('.confirmCode')
 let showNumberUser = document.querySelector('.numberUser');
 let spinnerShow = document.querySelector('.lds-ring-hide');
 let backToNumber = document.querySelector('.backToNumber');
-let submitLogin = document.querySelector('.finallyLogin');
-const EntryConfirmation = document.querySelector('.finallyLogin');
+// let submitLogin = document.querySelector('.finallyLogin');
+const EntryConfirmation = document.querySelector('.sublog');
 const checkCodeFinally = document.querySelector('.input_login_finally');
 const alertError = document.querySelector('.confirmCode-detail');
 
@@ -17,7 +15,10 @@ const alertError = document.querySelector('.confirmCode-detail');
 // import {copyBankordersec6} from './tA3-js.js';
 // console.log(copyBankordersec6);
 // click button verify
-submit.addEventListener('click', function (e) {
+document.querySelector('.sublog').addEventListener('click',function(e){
+    
+    let FirstName = document.querySelector('.input_log_name');
+let number = document.querySelector('.input_log_number');
     let nameCheck = FirstName.value;
     let numberCheck = number.value;
     let renderForConfirm = 0;
@@ -35,6 +36,7 @@ submit.addEventListener('click', function (e) {
         renderForConfirm = 0;
     } if (numberCheck.length != 11) {
         alert('شماره شما نامعتبر میباشد')
+        e.preventDefault()
         number.style.backgroundColor = 'rgb(252, 102, 65)';
         renderForConfirm = 0;
     }
@@ -46,42 +48,51 @@ submit.addEventListener('click', function (e) {
         setTimeout(() => {
             boxLogin.style.display = 'none';
             boxConfirm.style.display = 'block';
-            showNumberUser.textContent = numberCheck;
+            document.querySelector('.formLoginUser').submit();
+            // showNumberUser.textContent = numberCheck;
         }, 3000);
         // set empty string to next page
         checkCodeFinally.value = '';
     }
 })
 
+
 // click back to number and edit phone
-backToNumber.addEventListener('click', function () {
-    boxLogin.style.display = 'flex';
-    boxConfirm.style.display = 'none';
-    spinnerShow.setAttribute('class', 'lds-ring-hide');
-    number.value = '';
-    FirstName.value = '';
-    FirstName.style.backgroundColor = '';
-    number.style.backgroundColor = '';
+// backToNumber.addEventListener('click', function () {
+//     boxLogin.style.display = 'flex';
+//     boxConfirm.style.display = 'none';
+//     spinnerShow.setAttribute('class', 'lds-ring-hide');
+//     number.value = '';
+//     FirstName.value = '';
+//     FirstName.style.backgroundColor = '';
+//     number.style.backgroundColor = '';
 
-})
+// })
 
-submitLogin.addEventListener('click', function () {
-    spinnerShow.setAttribute('class', 'lds-ring-hide')
-})
+// submitLogin.addEventListener('click', function () {
+//     spinnerShow.setAttribute('class', 'lds-ring-hide')
+// })
 
 
 // finally login and join to dashbord
 
-EntryConfirmation.addEventListener('click', function () {
-    console.log(checkCodeFinally.value)
-    if (checkCodeFinally.value == 8888)
-        window.location.href = "./mainDashbord"
-    else {
-        alertError.insertAdjacentHTML('beforebegin', '<p class="alertErrorForCodeLogin">کد وارد شده صحیح نمیباشد</p>')
+function submitConfirm(e) {
+    if (checkCodeFinally.value != 8888) {
+        alertError.insertAdjacentHTML('beforebegin', '<p class="alertErrorForCodeLogin">کد وارد شده صحیح نمیباشد</p>');
     }
-})
-
-let whatName = JSON.parse(localStorage.getItem('firstName'));
-if (whatName.length > 2) {
-    window.location.href = "./mainDashbord"
 }
+
+
+// EntryConfirmation.addEventListener('click', function (e) {
+//     alert('1212')
+//     e.preventDefault()
+//     console.log(checkCodeFinally.value)
+//     if (checkCodeFinally.value == 8888) {
+//         form.submit()
+//     }
+//     else {
+//         e.preventDefault();
+//         alertError.insertAdjacentHTML('beforebegin', '<p class="alertErrorForCodeLogin">کد وارد شده صحیح نمیباشد</p>');
+//     }
+// })
+

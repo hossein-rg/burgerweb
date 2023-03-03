@@ -1,0 +1,41 @@
+<form action="/login" method="post">
+  <p class="confirmCode-detail">
+    کد تایید ارسال شده به شماره , <b class="numberUser">{%NUMBER%}</b> را وارد
+    نمایید :
+  </p>
+  <div class="confirmCode-input">
+    <p>کد تایید :</p>
+    <input
+    name="confirm"
+      class="remove-arrow input_login input_login_finally"
+      type="number"
+      placeholder="code: 8888"
+      required
+    />
+  </div>
+  <div class="checkORback">
+    <input
+      onclick="submitConfirm()"
+      type="submit"
+      value="تایید"
+      class="sublog finallyLogin"
+    />
+    <a href="/login" class="sublog backToNumber">بازگشت</a>
+  </div>
+  <div class="popLogin">
+    <p>کد تایید به شماره شما ارسال شد</p>
+  </div>
+</form>
+
+<!-- <form action="/dashbord" method="post">
+  <p class="confirmCode-detail">
+    کد تایید ارسال شده به شماره , <b class="numberUser">{%NUMBER%}</b> را وارد
+    نمایید :
+  </p>
+  <input
+  class="remove-arrow input_login input_login_finally"
+  type="number"
+  placeholder="code: 8888"
+  required
+/>
+</form> -->
