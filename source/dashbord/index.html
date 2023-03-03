@@ -1,56 +1,22 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/tA4-css.css">
-    <link rel="shortcut icon" href="./image/logo/logo-main.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/tA4-css.css" />
+    <link
+      rel="shortcut icon"
+      href="./image/logo/logo-main.png"
+      type="image/x-icon"
+    />
     <title>ChefZza dashbord</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="body">
-        <div class="loginForm">
-            <div class="lds-ring-hide">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <p class="loginForm-detail">برای ورود یا ثبت نام شماره تلفن خود را وارد نمایید :</p>
-            <div class="name-input">
-                <p>نام :</p>
-                <input class="input_log_name input_login" type="text"
-                    pattern="^[\u0600-\u06FF\uFB8A\u067E\u0686\u06AF]+$">
-            </div>
-            <div class="number-input">
-                <p>شماره تلفن :</p>
-                <input class="input_log_number input_login remove-arrow" type="number">
-            </div>
-            <div class="verify-input">
-                <button class="sublog submit_login" type="submit">تایید</button>
-            </div>
-        </div>
-        <div class="confirmCode">
-            <p class="confirmCode-detail">کد تایید ارسال شده به شماره , <b class="numberUser">09129121212</b> را وارد
-                نمایید :</p>
-            <div class="confirmCode-input">
-                <p>کد تایید :</p>
-                <input class="remove-arrow input_login input_login_finally" type="number" placeholder="code: 8888">
-            </div>
-            <div class="checkORback">
-                <button class="sublog finallyLogin">تایید</button>
-                <button class="sublog backToNumber">بازگشت</button>
-            </div>
-            <div class="popLogin">
-                <p>
-                    کد تایید به شماره شما ارسال شد
-                </p>
-            </div>
-        </div>
+      <div class="logininputs">{%LOGIN_INPUTS%}</div>
+      <div class="confirmCode">{%CONFIRM1_CODE%}</div>
     </div>
     <script src="../js/jsForDashbord.js"></script>
-</body>
-
+  </body>
 </html>

@@ -9,7 +9,6 @@ localStorage.setItem('baseBankOrder', JSON.stringify(bankordersec6))
 // fine work
 let copyNull = bankordersec6;
 
-
 const searchBox = document.querySelector(".header-bottom-search");
 const closeSearchBox = document.querySelector(".out-popup");
 const navSticky = document.querySelector(".header-bottom");
@@ -53,14 +52,15 @@ if (previousSelectUser) {
   numberShop.textContent = previousSelectUser.all;
 }
 
-animeShakeOrder.addEventListener('click', function () {
-  let whatData = Number(numberShop.textContent);
-  console.log(whatData)
-  if (whatData == 0) {
-    let temp = JSON.parse(localStorage.getItem('baseBankOrder'))
-    localStorage.setItem('userOrder', JSON.stringify(temp));
-  }
-})
+// editfornode
+// animeShakeOrder.addEventListener('click', function () {
+//   let whatData = Number(numberShop.textContent);
+//   console.log(whatData)
+//   if (whatData == 0) {
+//     let temp = JSON.parse(localStorage.getItem('baseBankOrder'))
+//     localStorage.setItem('userOrder', JSON.stringify(temp));
+//   }
+// })
 
 
 // nav bar sticky
@@ -363,8 +363,8 @@ boxlistSec5.addEventListener('click', function (e) {
     removebtn.style.display = "block";
     numberbtn.style.display = "block";
     //save to local storage
-    // copyBankordersec6 = copyNull;
-    // localStorage.setItem('userOrder', JSON.stringify(copyBankordersec6))
+    let copyBankordersec6 = copyNull;
+    localStorage.setItem('userOrder', JSON.stringify(copyBankordersec6))
     // show + only and show - and number
     // for(const child in childrenOrder){
     //   childrenOrder[child].style.display = "block";
@@ -480,10 +480,10 @@ sendEmail.addEventListener('click', function () {
   }
 })
 
+// deitfornode
+// // go to dashbord
 
-// go to dashbord
-
-document.querySelector('.header-bottom-orderbox')
-  .addEventListener('click', function () {
-    window.location.href = "../dashbord"
-  })
+// document.querySelector('.header-bottom-orderbox')
+//   .addEventListener('click', function () {
+//     window.location.href = "../dashbord"
+//   })

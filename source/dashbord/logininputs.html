@@ -1,0 +1,42 @@
+<form class="formLoginUser" action="/login" method="post">
+  <div class="loginForm">
+    <div class="lds-ring-hide">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p class="loginForm-detail">
+      برای ورود یا ثبت نام شماره تلفن خود را وارد نمایید :
+    </p>
+    <div class="name-input">
+      <p>نام :</p>
+      <input
+        name="firstName"
+        class="input_log_name input_login"
+        type="text"
+        pattern="^[\u0600-\u06FF\uFB8A\u067E\u0686\u06AF]+$"
+        required
+      />
+    </div>
+    <div class="number-input">
+      <p>شماره تلفن :</p>
+      <input
+        name="Number"
+        class="input_log_number input_login remove-arrow"
+        type="number"
+        required
+        minlength="11"
+      />
+    </div>
+    <div class="verify-input">
+      <button
+        onclick="submitLogin()"
+        class="sublog submit_login"
+        type="submit"
+      >
+        تایید
+      </button>
+    </div>
+  </div>
+</form>
