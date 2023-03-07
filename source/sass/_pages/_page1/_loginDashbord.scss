@@ -18,7 +18,7 @@
     background-color: rgb(255, 166, 2);
     color: black;
     width: 40rem;
-    height: 27rem;
+    height: 22rem;
     margin: auto;
     margin-top: 50vh;
     transform: translateY(-50%);
@@ -34,13 +34,6 @@
         justify-content: center;
     }
 
-    .name-input {
-        display: flex;
-        justify-content: center;
-        gap: 7rem;
-        margin-left: 9rem;
-    }
-
     .number-input {
         display: flex;
         justify-content: center;
@@ -53,11 +46,9 @@
     }
 
     .verify-input {
-        display: flex;
-        justify-content: left;
-        display: inline-flex;
-        margin-bottom: 1rem;
-        margin-left: 1.5rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
 
         button {
             font-family: font2;
@@ -77,7 +68,8 @@
     background-color: rgb(255, 166, 2);
     width: 40rem;
     direction: rtl;
-    height: 27rem;
+    height: auto;
+    padding: 0 0 1.5rem 0;
     margin: auto;
     margin-top: 50vh;
     transform: translateY(-50%);
@@ -93,7 +85,7 @@
         display: flex;
         align-items: center;
         gap: 2rem;
-        padding: 0 3.5rem;
+        padding: 0 5.5rem;
     }
 
     .checkORback {
@@ -200,6 +192,19 @@
     }
 }
 
+
+.name-input {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-left: 1rem;
+}
+
+.checkLoginOrSignup{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
 
 @keyframes lds_ring {
     0% {
@@ -326,18 +331,17 @@
             &-detail {
                 padding: 0 2rem 0 1rem;
             }
-
-            .name-input,
             .number-input {
                 justify-content: left;
                 margin-left: 3rem;
             }
         }
 
+        .name-input,
         .confirmCode {
             gap: 1.5rem;
             width: 31rem;
-
+            margin-left: 3rem;
             &-input {
                 padding: 0;
                 justify-content: center;
