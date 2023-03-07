@@ -1,8 +1,19 @@
-<form action="/login" method="post">
+<form action="/login" method="post" onsubmit="return validateConfirmCode('.input_log_name','.input_login_finally',2)">
   <p class="confirmCode-detail">
     کد تایید ارسال شده به شماره , <b class="numberUser">{%NUMBER%}</b> را وارد
     نمایید :
   </p>
+  <div class="checkLoginOrSignup">
+    <div class="name-input">
+      <p>نام :</p>
+      <input
+        name="firstName"
+        class="input_log_name input_login"
+        type="text"
+        pattern="^[\u0600-\u06FF\uFB8A\u067E\u0686\u06AF]+$"
+        required
+      />
+  </div>
   <div class="confirmCode-input">
     <p>کد تایید :</p>
     <input
@@ -13,9 +24,9 @@
       required
     />
   </div>
+  </div>
   <div class="checkORback">
     <input
-      onclick="submitConfirm()"
       type="submit"
       value="تایید"
       class="sublog finallyLogin"

@@ -36,11 +36,11 @@ app.get('/yourDashbord', async (req, res) => {
 
 app.get('/login', async (req, res) => {
     try {
-        console.log(req.body);
         // const loginPageInitial = fs.readFileSync(`${__dirname}/dashbord/index.html`, 'utf-8');
         // const loginPage = fs.readFileSync(`${__dirname}/dashbord/logininputs.html`, 'utf-8');
         const replaceLoginPage = loginPageInitial.replace(/{%LOGIN_INPUTS%}/, loginPage);
-        res.status(200).send(replaceLoginPage);
+        const classLog = replaceLoginPage.replace(/{%CLASS_LOGIN%}/,'logininput');
+        res.status(200).send(classLog);
     } catch {
         console.log('error');
     }
@@ -55,8 +55,9 @@ app.post('/login', async (req, res) => {
         else if(data.Number){
         // const loginPageInitial = fs.readFileSync(`${__dirname}/dashbord/index.html`, 'utf-8');
         // const confirmpage = fs.readFileSync(`${__dirname}/dashbord/confirmcode.html`, 'utf-8');
-        const repPageCon = loginPageInitial.replace(/{%CONFIRM1_CODE%}/, confirmpage);
-        const setNumber = repPageCon.replace(/{%NUMBER%}/, data.Number);
+        const repPageCon = loginPageInitial.replace(/{%LOGIN_INPUTS%}/, confirmpage);
+        const classConfirm = repPageCon.replace(/{%CLASS_LOGIN%}/,'confirmCode');
+        const setNumber = classConfirm.replace(/{%NUMBER%}/, data.Number);
         res.send(setNumber)
         }
     } catch {
@@ -73,6 +74,7 @@ app.post('/login', async (req, res) => {
 //     }
 // })
 
-app.listen(8090, (req, res) => {
-    console.log('your in 127.0.0.1:8080');
+const port = 8080;
+app.listen(port, (req, res) => {
+    console.log(`your in 127.0.0.1:${port}`);
 })
